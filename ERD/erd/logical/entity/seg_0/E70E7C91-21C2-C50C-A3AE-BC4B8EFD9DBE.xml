@@ -1,0 +1,212 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E70E7C91-21C2-C50C-A3AE-BC4B8EFD9DBE" name="User">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 10:33:09 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<engineerTo>
+<item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="44667AE5-2F76-B379-A8F6-58B6905787EA">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 10:34:08 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<engineerTo>
+<item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="C4936394-C7C5-8AE1-B479-DE01B3F8458A">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 10:34:33 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<engineerTo>
+<item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="firstname" id="086DD73B-FD01-ED6C-EAD7-B586F1C05182">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 10:33:25 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<engineerTo>
+<item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="insertion" id="7B56366B-DA6E-4EF0-1A58-33DBB9EC7E50">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 10:35:35 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<engineerTo>
+<item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="lastname" id="EB98B5D6-B2EB-8085-5FE2-D1A0C79EDBB0">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 10:33:56 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<engineerTo>
+<item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="birthdate" id="EA6E8C77-F7E6-5F8E-955F-5EB80C163D80">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 10:39:56 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<engineerTo>
+<item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="username" id="63978D28-AA8A-260E-6347-DF2FA9772C20">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 10:40:10 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<engineerTo>
+<item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="password" id="524B85DD-663D-E852-2131-3021F609FF77">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 10:40:25 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<engineerTo>
+<item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="role" id="6C9CA43B-8CEC-72F4-5691-20BB77DA1CFA">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 11:24:41 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<engineerTo>
+<item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>47823B89-BECE-2D4A-B641-EE3BE6149078</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="gender" id="DCCA67C6-0518-CCEC-158C-2D0E1518E44F">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 10:40:46 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<engineerTo>
+<item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="street" id="4B8CE102-894D-7CA6-9887-9F54DD44E11B">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 10:43:35 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<engineerTo>
+<item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="streetnumber" id="B1CB76E1-2BAE-720D-11A5-690683B9799B">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 10:44:35 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<engineerTo>
+<item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="postcode" id="EB1271A3-EDA0-634C-6823-064E5DFC5979">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 10:43:51 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<engineerTo>
+<item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="city" id="F5D5EB06-5CE7-8A93-2BAA-8A4744453B50">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 10:43:52 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<engineerTo>
+<item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="93D34DED-086E-57EE-A021-B6B2FD7CCF2E" name="User PK">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 10:34:12 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>44667AE5-2F76-B379-A8F6-58B6905787EA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

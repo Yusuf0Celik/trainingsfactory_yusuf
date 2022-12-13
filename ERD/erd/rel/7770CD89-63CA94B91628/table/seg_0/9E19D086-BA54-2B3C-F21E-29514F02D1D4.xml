@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9E19D086-BA54-2B3C-F21E-29514F02D1D4" name="User_lesson">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 11:12:06 UTC</createdTime>
+<generatorID>D319C32B-C7DA-1820-9B3A-9878E3305ED7</generatorID>
+<ownerDesignName>erd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="User_lesson_ID" id="9DA89D93-EB9A-3E08-FBD6-4779F2E2517C">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 11:46:55 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="lesson_id" id="BE90CC6C-C1FF-2268-3375-94A5E9756F0E">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 11:12:06 UTC</createdTime>
+<generatorID>8536ED65-A59B-70EA-3D96-F90748A4096F</generatorID>
+<ownerDesignName>erd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="398AB388-5A87-C384-8785-9E0765BCEA2B" referredColumn="FD21316A-4F6C-AB36-4F49-8F5870557875"/>
+</associations>
+</Column>
+<Column name="User_id" id="FA915ECC-CC41-C5F0-0F6D-20274CE38E13">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 11:12:06 UTC</createdTime>
+<generatorID>459D9380-8B7E-AC81-75D8-333CC009206E</generatorID>
+<ownerDesignName>erd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0ECBA425-7C32-547E-5236-BF087191F31E" referredColumn="1E274165-F435-3055-2757-ECBA37A83337"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DE19BFD8-922E-5439-867E-50BE99420C43" name="User_lesson_PK">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 11:46:55 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="9DA89D93-EB9A-3E08-FBD6-4779F2E2517C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="40C4DC76-FE51-836A-5616-18ACFC3BA500" name="User_lesson__IDX">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 11:46:55 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>79200200-F0FB-6D2A-794A-2D8CAEB30F48</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="FA915ECC-CC41-C5F0-0F6D-20274CE38E13"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B6E8E4A6-537C-969B-942F-6975CBDD9EA5" name="User_lesson_lesson_FK">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 11:12:06 UTC</createdTime>
+<generatorID>B999DB6B-EB58-8A7D-E8D9-5968195B606E</generatorID>
+<ownerDesignName>erd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BE90CC6C-C1FF-2268-3375-94A5E9756F0E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="50C2EF9E-A8C8-5860-66D1-15525803E432" name="User_lesson_User_FK">
+<createdBy>SD Student</createdBy>
+<createdTime>2022-12-13 11:12:06 UTC</createdTime>
+<generatorID>79200200-F0FB-6D2A-794A-2D8CAEB30F48</generatorID>
+<ownerDesignName>erd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FA915ECC-CC41-C5F0-0F6D-20274CE38E13"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

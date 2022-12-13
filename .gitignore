@@ -18,3 +18,14 @@
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+.idea/modules.xml
+.idea/trainingsfactory_yusuf.iml
+.idea/vcs.xml
+.idea/workspace.xml
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
