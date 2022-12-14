@@ -10,3 +10,12 @@ import './styles/app.css';
 
 // start the Stimulus application
 import './bootstrap';
+
+const navbarButton = document.querySelector('.navbar-button')
+const navbarList = document.querySelector('.nav-list')
+
+navbarButton.addEventListener('click', () => {
+    navbarList.classList.contains('hidden')
+        ? navbarList.classList.replace('hidden','block')
+        : navbarList.classList.replace('block','hidden')
+})
