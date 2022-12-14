@@ -16,6 +16,6 @@ const navbarList = document.querySelector('.nav-list')
 
 navbarButton.addEventListener('click', () => {
     navbarList.classList.contains('hidden')
-        ? navbarList.classList.replace('hidden','block')
-        : navbarList.classList.replace('block','hidden')
+        ? navbarList.classList.replace('hidden', 'block')
+        : navbarList.classList.replace('block', 'hidden')
 })
