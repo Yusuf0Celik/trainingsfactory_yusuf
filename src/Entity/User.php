@@ -54,7 +54,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $streetnumber = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 6)]
     private ?string $postal_code = null;
 
     #[ORM\Column(length: 255)]
@@ -90,13 +90,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return (string) $this->email;
     }
 
-    /**
-     * @deprecated since Symfony 5.3, use getUserIdentifier instead
-     */
-    public function getUsername(): string
-    {
-        return (string) $this->email;
-    }
 
     /**
      * @see UserInterface
@@ -198,6 +191,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->birthdate = $birthdate;
 
         return $this;
+    }
+
+    public function getUsername(): ?string
+    {
+        return $this->username;
     }
 
     public function setUsername(string $username): self

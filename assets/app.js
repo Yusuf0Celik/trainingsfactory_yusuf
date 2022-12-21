@@ -11,6 +11,7 @@ import './styles/app.css';
 // start the Stimulus application
 import './bootstrap';
 
+// Navbar
 const navbarButton = document.querySelector('.navbar-button')
 const navbarList = document.querySelector('.nav-list')
 
@@ -20,23 +21,26 @@ navbarButton.addEventListener('click', () => {
         : navbarList.classList.replace('block', 'hidden')
 })
 
+// Image Carousel
 const carouselImages = document.querySelectorAll('.carousel-item')
 
-setInterval(() => {
-    let activeImageID =  -3;
-    let nxtImg;
-    for (let i = 0; i < carouselImages.length; i++) {
-        const chkImg = carouselImages[i];
-        if (chkImg.classList.contains('active')) {
-            activeImageID = i;
-            nxtImg = activeImageID + 1;
+if (window.location.pathname === '/') {
+    setInterval(() => {
+        let activeImageID = -3;
+        let nxtImg;
+        for (let i = 0; i < carouselImages.length; i++) {
+            const chkImg = carouselImages[i];
+            if (chkImg.classList.contains('active')) {
+                activeImageID = i;
+                nxtImg = activeImageID + 1;
+            }
+
+            if (nxtImg >= carouselImages.length) {
+                nxtImg = 0;
+            }
         }
 
-        if (nxtImg >= carouselImages.length) {
-            nxtImg = 0;
-        }
-    }
-
-    carouselImages[activeImageID].classList.replace('active', 'inactive');
-    carouselImages[nxtImg].classList.replace('inactive', 'active');
-}, 5000)
+        carouselImages[activeImageID].classList.replace('active', 'inactive');
+        carouselImages[nxtImg].classList.replace('inactive', 'active');
+    }, 5000)
+}

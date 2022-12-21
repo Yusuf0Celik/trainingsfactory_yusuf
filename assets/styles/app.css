@@ -29,3 +29,8 @@ body {
 .carousel-item.inactive {
     opacity: 100%;
 }
+
+#registration_form_birthdate > * {
+    padding: .5rem .75rem;
+    border: 2px solid white;
+}

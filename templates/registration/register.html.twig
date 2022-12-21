@@ -1,42 +1,83 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}{{ parent() }} | Register{% endblock %}
 
 {% block content %}
     {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
 
-    <div class="container bg-grey rounded-xl p-6 mx-auto">
+    <div class="container bg-grey rounded-xl p-6 mx-auto mt-[6rem] w-fit drop-shadow-2xl shadow-grey">
         <h1 class="text-3xl font-semibold mb-5">Register</h1>
 
         {{ form_start(registrationForm, {
             attr: {'class': 'w-full flex flex-col gap-3 flex-wrap'}
 
         }) }}
-        <div class="form-divide flex gap-3">
+        <div class="form-divide flex flex-wrap gap-3">
+            {{ form_row(registrationForm.username, {
+                label: 'Gebruikersnaam',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+            }) }}
+            {{ form_row(registrationForm.gender, {
+                label: 'Gender',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+            }) }}
+        </div>
+        <div class="form-divide flex flex-wrap gap-3">
             {{ form_row(registrationForm.firstname, {
-                attr: {'class': 'flex px-3 py-2'}
+                label: 'Voornaam',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
             }) }}
             {{ form_row(registrationForm.insertion, {
-                attr: {'class': 'flex px-3 py-2'}
+                label: 'Tussenvoegsel(s)',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
             }) }}
             {{ form_row(registrationForm.lastname, {
-                attr: {'class': 'flex px-3 py-2'}
+                label: 'Achternaam',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
             }) }}
         </div>
-        <div class="form-divide">
+        <div class="form-divide flex flex-wrap gap-3">
             {{ form_row(registrationForm.email, {
-                attr: {'class': 'flex px-3 py-2'}
+                label: 'Email',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+            }) }}
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Password',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+            }) }}
+            {{ form_row(registrationForm.birthdate, {
+                label: 'Geboortedatum',
+                attr: {'class': 'flex'}
             }) }}
         </div>
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password',
-            attr: {'class': 'flex px-3 py-2'}
-        }) }}
+        <div class="form-divide flex flex-wrap gap-3">
+            {{ form_row(registrationForm.street, {
+                label: 'Straatnaam',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+            }) }}
+            {{ form_row(registrationForm.streetnumber, {
+                label: 'Straatnummer',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+            }) }}
+            {{ form_row(registrationForm.postal_code, {
+                label: 'Postcode',
+                attr: {
+                    'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark',
+                    'max': 6,
+                }
+            }) }}
+            {{ form_row(registrationForm.city, {
+                label: 'Stad',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+            }) }}
+        </div>
         <div class="buttons">
-            {{ form_row(registrationForm.agreeTerms) }}
-            <button type="submit" class="btn">Register</button>
+            {{ form_row(registrationForm.agreeTerms, {
+                attr: {'class': 'my-4 ml-2'}
+            }) }}
+            <button type="submit" class="btn bg-primary text-white rounded px-3 py-2">Registreer</button>
         </div>
 
         {{ form_end(registrationForm) }}

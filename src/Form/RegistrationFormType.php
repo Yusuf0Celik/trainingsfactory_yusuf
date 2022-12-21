@@ -3,9 +3,11 @@
 namespace App\Form;
 
 use App\Entity\User;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -19,16 +21,29 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('firstname')
-            ->add('insertion')
+            ->add('insertion', TextType::class, [
+                'required' => false
+            ])
             ->add('lastname')
-            ->add('birthdate')
+            ->add('birthdate', DateType::class, [
+                'years' => range(date('Y'), 1970)
+            ])
             ->add('username')
-            ->add('gender')
+            ->add('gender', ChoiceType::class, [
+                'attr' => [
+                    'class' => ''
+                ],
+                'choices' => [
+                    'Man' => '0',
+                    'Vrouw' => '1',
+                ]
+            ])
             ->add('street')
             ->add('streetnumber')
             ->add('postal_code')
             ->add('city')
             ->add('email')
+            ->add('role')
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
