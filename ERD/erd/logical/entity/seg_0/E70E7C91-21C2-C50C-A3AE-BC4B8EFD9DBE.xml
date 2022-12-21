@@ -167,7 +167,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="postcode" id="EB1271A3-EDA0-634C-6823-064E5DFC5979">
+<Attribute name="postal_code" id="EB1271A3-EDA0-634C-6823-064E5DFC5979">
 <createdBy>SD Student</createdBy>
 <createdTime>2022-12-13 10:43:51 UTC</createdTime>
 <ownerDesignName>erd</ownerDesignName>

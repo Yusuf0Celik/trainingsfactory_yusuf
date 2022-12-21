@@ -2,10 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --navbar-height: 88px;
+}
+
 *,
 *::before,
 *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.carousel-item {
+    opacity: 0;
+}
+.carousel-item.active {
+    opacity: 0;
+}
+.carousel-item.inactive {
+    opacity: 100%;
 }
