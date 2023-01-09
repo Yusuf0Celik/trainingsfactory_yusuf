@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2232E496-8A1F-8489-4B25-21E27978B719" name="sport">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2232E496-8A1F-8489-4B25-21E27978B719" name="Sport">
 <createdBy>SD Student</createdBy>
 <createdTime>2022-12-13 10:46:30 UTC</createdTime>
 <ownerDesignName>erd</ownerDesignName>
@@ -57,7 +57,7 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="7AB318A6-0A10-139C-FEC2-D1B64D223B35" name="sport PK">
+<identifier id="7AB318A6-0A10-139C-FEC2-D1B64D223B35" name="Sport_PK">
 <createdBy>SD Student</createdBy>
 <createdTime>2022-12-13 10:51:57 UTC</createdTime>
 <ownerDesignName>erd</ownerDesignName>

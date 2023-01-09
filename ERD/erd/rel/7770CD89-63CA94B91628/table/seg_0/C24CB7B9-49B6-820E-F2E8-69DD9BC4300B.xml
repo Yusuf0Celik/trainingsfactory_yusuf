@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="35E9BADD-D179-F7FF-F3D2-ED84A6B1DF3F" name="Sport">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C24CB7B9-49B6-820E-F2E8-69DD9BC4300B" name="Sport">
 <createdBy>SD Student</createdBy>
-<createdTime>2022-12-13 11:12:06 UTC</createdTime>
+<createdTime>2023-01-09 09:21:31 UTC</createdTime>
 <generatorID>2232E496-8A1F-8489-4B25-21E27978B719</generatorID>
 <ownerDesignName>erd</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="id" id="E682CCDE-DB3E-9BD6-6918-AFDA3FB03DF6">
+<Column name="id" id="E4093AF2-96D2-BE5C-B658-ECF15ED9A884">
 <createdBy>SD Student</createdBy>
-<createdTime>2022-12-13 11:12:06 UTC</createdTime>
+<createdTime>2023-01-09 09:21:31 UTC</createdTime>
 <generatorID>CE0D1C63-E2F9-012F-3955-78F6A0445F91</generatorID>
 <ownerDesignName>erd</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -19,9 +19,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="name" id="E1118C51-F0D6-46E9-79E9-AD1DAABEC675">
+<Column name="name" id="48A8C9E1-598F-378C-0233-03C8A25EC049">
 <createdBy>SD Student</createdBy>
-<createdTime>2022-12-13 11:12:06 UTC</createdTime>
+<createdTime>2023-01-09 09:21:31 UTC</createdTime>
 <generatorID>011E79F0-E516-E09A-EE51-710BAD586EB8</generatorID>
 <ownerDesignName>erd</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -32,9 +32,9 @@
 <ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="image" id="1213F576-E02B-A88E-1F4F-441ADB223109">
+<Column name="image" id="0A88FD57-AF0E-B53C-1A37-A62D596109B2">
 <createdBy>SD Student</createdBy>
-<createdTime>2022-12-13 11:12:06 UTC</createdTime>
+<createdTime>2023-01-09 09:21:31 UTC</createdTime>
 <generatorID>CE4F7603-C1D2-54B5-373F-0575F9E065F3</generatorID>
 <ownerDesignName>erd</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -47,16 +47,16 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="25CF5312-5F70-4D3E-6279-0EF54C360376" name="sport_PK">
+<ind_PK_UK id="41B01A38-EFE1-8FFD-F71F-B079B361D8DD" name="Sport_PK">
 <createdBy>SD Student</createdBy>
-<createdTime>2022-12-13 11:12:06 UTC</createdTime>
+<createdTime>2023-01-09 09:21:31 UTC</createdTime>
 <generatorID>7AB318A6-0A10-139C-FEC2-D1B64D223B35</generatorID>
 <ownerDesignName>erd</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="E682CCDE-DB3E-9BD6-6918-AFDA3FB03DF6"/>
+<colUsage columnID="E4093AF2-96D2-BE5C-B658-ECF15ED9A884"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="lesson id2" id="8536ED65-A59B-70EA-3D96-F90748A4096F">
+<Attribute name="Lesson id" id="8536ED65-A59B-70EA-3D96-F90748A4096F">
 <createdBy>SD Student</createdBy>
 <createdTime>2022-12-13 11:08:08 UTC</createdTime>
 <generatorID>B999DB6B-EB58-8A7D-E8D9-5968195B606E</generatorID>
@@ -29,9 +29,9 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="User id" id="459D9380-8B7E-AC81-75D8-333CC009206E">
+<Attribute name="User id" id="593D3501-0DBC-AA3A-8A0F-E6E9D0418405">
 <createdBy>SD Student</createdBy>
-<createdTime>2022-12-13 11:08:22 UTC</createdTime>
+<createdTime>2023-01-09 09:16:55 UTC</createdTime>
 <generatorID>79200200-F0FB-6D2A-794A-2D8CAEB30F48</generatorID>
 <ownerDesignName>erd</ownerDesignName>
 <engineerTo>
