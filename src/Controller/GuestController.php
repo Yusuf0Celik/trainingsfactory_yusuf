@@ -13,4 +13,15 @@ class GuestController extends AbstractController
     {
         return $this->render('app/index.html.twig');
     }
+
+    #[Route('/about', name: 'app_about')]
+    public function about(): Response
+    {
+        return $this->render('app/about.html.twig');
+    }
+    #[Route('/rules', name: 'app_rules')]
+    public function rules(): Response
+    {
+        return $this->render('app/rules.html.twig');
+    }
 }

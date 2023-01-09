@@ -34,9 +34,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $firstname = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $insertion = null;
-
-    #[ORM\Column(length: 255)]
     private ?string $lastname = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
@@ -62,6 +59,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $insertion = null;
 
     public function getId(): ?int
     {
@@ -153,18 +153,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setFirstname(string $firstname): self
     {
         $this->firstname = $firstname;
-
-        return $this;
-    }
-
-    public function getInsertion(): ?string
-    {
-        return $this->insertion;
-    }
-
-    public function setInsertion(string $insertion): self
-    {
-        $this->insertion = $insertion;
 
         return $this;
     }
@@ -273,6 +261,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getInsertion(): ?string
+    {
+        return $this->insertion;
+    }
+
+    public function setInsertion(?string $insertion): self
+    {
+        $this->insertion = $insertion;
 
         return $this;
     }

@@ -26,7 +26,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('lastname')
             ->add('birthdate', DateType::class, [
-                'years' => range(date('Y'), 1970)
+                'years' => range(date('Y'), 1950)
             ])
             ->add('username')
             ->add('gender', ChoiceType::class, [
@@ -43,7 +43,6 @@ class RegistrationFormType extends AbstractType
             ->add('postal_code')
             ->add('city')
             ->add('email')
-            ->add('role')
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
