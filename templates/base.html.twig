@@ -16,7 +16,7 @@
     {% endblock %}
 </head>
 <body>
-<nav class="bg-primaryDark px-4 py-2.5 h-[88px] flex align-middle fixed z-50 left-0 right-0">
+<nav class="bg-primaryDark px-4 py-2.5 h-[88px] justify-center flex align-middle fixed z-50 left-0 right-0">
     <div class="container flex flex-wrap items-center justify-between">
         <a href="{{ path('app_home') }}" class="text-2xl whitespace-nowrap text-white">
             Training Factory
@@ -48,7 +48,7 @@
                 {% if app.user %}
                     {% if 'ROLE_ADMIN' in app.user.roles %}
                         <li>
-                            <a href="{{ path('app_home') }}"
+                            <a href="{{ path('app_dashboard') }}"
                                class="block py-2 px-3 text-center font-semibold text-grey hover:text-white transition-all">Dashboard</a>
                         </li>
                     {% endif %}

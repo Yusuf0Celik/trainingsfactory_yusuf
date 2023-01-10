@@ -3,10 +3,6 @@
 {% block title %}{{ parent() }} | Register{% endblock %}
 
 {% block content %}
-    {% for flash_error in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-    {% endfor %}
-
     <div class="container bg-grey rounded-xl p-6 mx-auto mt-[6rem] w-fit drop-shadow-2xl shadow-grey">
         <h1 class="text-3xl font-semibold mb-5">Register</h1>
 
