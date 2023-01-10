@@ -1,0 +1,70 @@
+{% extends './base.html.twig' %}
+
+{% block title %}{{ parent() }} | Users{% endblock %}
+
+{% block content %}
+    <div class="container bg-grey rounded-xl p-6 mx-auto mt-[6rem] w-fit drop-shadow-2xl shadow-grey">
+        <div class="form-divide flex flex-wrap gap-3">
+            <div>
+                <label for="registration_form_username" class="required">Id</label>
+                <input type="text" id="registration_form_username" value="{{ user.id }}" disabled
+                       class="flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark">
+            </div>
+            <div>
+                <label for="registration_form_gender" class="required">Firstname</label>
+                <input type="text" id="registration_form_username" value="{{ user.firstname }}" disabled
+                       class="flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark">
+            </div>
+            <div>
+                <label for="registration_form_gender" class="required">Insertion</label>
+                <input type="text" id="registration_form_username" value="{{ user.insertion }}" disabled
+                       class="flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark">
+            </div>
+            <div>
+                <label for="registration_form_gender" class="required">Lastname</label>
+                <input type="text" id="registration_form_username" value="{{ user.lastname }}" disabled
+                       class="flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark">
+            </div>
+        </div>
+        <div class="form-divide flex flex-wrap gap-3">
+            <div>
+                <label for="registration_form_gender" class="required">Username</label>
+                <input type="text" id="registration_form_username" value="{{ user.username }}" disabled
+                       class="flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark">
+            </div>
+            <div>
+                <label for="registration_form_gender" class="required">Gender</label>
+                <input type="text" id="registration_form_username" value="{{ user.gender }}" disabled
+                       class="flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark">
+            </div>
+            <div>
+                <label for="registration_form_gender" class="required">Birtdate</label>
+                <input type="date" id="registration_form_username" value="{{ user.birthdate|date('Y-m-d') }}" disabled
+                       class="flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark">
+            </div>
+        </div>
+        <div class="form-divide flex flex-wrap gap-3">
+            <div>
+                <label for="registration_form_gender" class="required">Straat</label>
+                <input type="text" id="registration_form_username" value="{{ user.street }}" disabled
+                       class="flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark">
+            </div>
+            <div>
+                <label for="registration_form_gender" class="required">Straatnummer</label>
+                <input type="text" id="registration_form_username" value="{{ user.streetnumber }}" disabled
+                       class="flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark">
+            </div>
+            <div>
+                <label for="registration_form_gender" class="required">Postcode</label>
+                <input type="text" id="registration_form_username" value="{{ user.postalCode }}" disabled
+                       class="flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark">
+            </div>
+            <div>
+                <label for="registration_form_gender" class="required">Stad</label>
+                <input type="text" id="registration_form_username" value="{{ user.city }}" disabled
+                       class="flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark">
+            </div>
+        </div>
+        <button class="btn bg-red-600 text-white px-8 py-3 mt-3 self-end">Delete</button>
+    </div>
+{% endblock %}

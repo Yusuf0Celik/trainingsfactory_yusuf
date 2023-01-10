@@ -19,9 +19,29 @@ class AdminController extends AbstractController
     public function DashboardUsers(UserRepository $userRepository): Response
     {
         $users = $userRepository->findAll();
-//        dd($users);
+
         return $this->render('admin/dashboard_users.html.twig', [
             'users' => $users,
+        ]);
+    }
+
+    #[Route('/dashboard/edit/user/{id}', name: 'app_dashboard_edit')]
+    public function UserEdit($id, UserRepository $userRepository): Response
+    {
+        $user = $userRepository->find(['id' => $id]);
+
+        return $this->render('admin/dashboard_edit.html.twig', [
+            'user' => $user,
+        ]);
+    }
+
+    #[Route('/dashboard/delete/user/{id}', name: 'app_dashboard_delete')]
+    public function UserDelete($id, UserRepository $userRepository): Response
+    {
+        $user = $userRepository->find(['id' => $id]);
+
+        return $this->render('admin/dashboard_delete.html.twig', [
+            'user' => $user,
         ]);
     }
 
