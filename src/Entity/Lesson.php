@@ -16,9 +16,6 @@ class Lesson
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToMany(targetEntity: User::class)]
-    private Collection $user;
-
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $time = null;
 
@@ -34,30 +31,6 @@ class Lesson
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUser(): Collection
-    {
-        return $this->user;
-    }
-
-    public function addUser(User $user): self
-    {
-        if (!$this->user->contains($user)) {
-            $this->user->add($user);
-        }
-
-        return $this;
-    }
-
-    public function removeUser(User $user): self
-    {
-        $this->user->removeElement($user);
-
-        return $this;
     }
 
     public function getTime(): ?\DateTimeInterface

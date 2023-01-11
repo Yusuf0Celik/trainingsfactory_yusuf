@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 10 jan 2023 om 10:31
+-- Gegenereerd op: 11 jan 2023 om 13:01
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.6
 
@@ -41,7 +41,24 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20230109081237', '2023-01-10 09:05:54', 108),
 ('DoctrineMigrations\\Version20230109091403', '2023-01-10 09:05:54', 61),
 ('DoctrineMigrations\\Version20230109092714', '2023-01-10 09:05:54', 78),
-('DoctrineMigrations\\Version20230110092734', '2023-01-10 10:27:37', 39);
+('DoctrineMigrations\\Version20230110092734', '2023-01-10 10:27:37', 39),
+('DoctrineMigrations\\Version20230111080037', '2023-01-11 11:26:22', 108),
+('DoctrineMigrations\\Version20230111080342', '2023-01-11 11:26:22', 29),
+('DoctrineMigrations\\Version20230111111118', '2023-01-11 12:11:24', 51),
+('DoctrineMigrations\\Version20230111112003', '2023-01-11 12:20:06', 85),
+('DoctrineMigrations\\Version20230111112114', '2023-01-11 12:21:16', 55);
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `lesson`
+--
+
+CREATE TABLE `lesson` (
+  `id` int(11) NOT NULL,
+  `time` datetime NOT NULL,
+  `sport_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -78,6 +95,16 @@ CREATE TABLE `sport` (
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `sport`
+--
+
+INSERT INTO `sport` (`id`, `name`, `image`) VALUES
+(1, 'Boxing', 'img/63be8f532747b.jpg'),
+(2, 'Kickboxing', 'img/63be8f6421fbc.jpg'),
+(3, 'MMA', 'img/63be8f6fc3655.jpg'),
+(4, 'Stootzaktraining', 'img/63be92b214575.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -106,9 +133,21 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `firstname`, `insertion`, `lastname`, `birthdate`, `username`, `gender`, `street`, `streetnumber`, `postal_code`, `city`) VALUES
-(1, 'admin@admin.nl', '[\"ROLE_USER\",\"ROLE_ADMIN\"]', '$2y$13$4Q2doAN4LCH84ONmVpfW5OQlkYgfrM9Yd1jMVFFPlINfYYP1cN7Hu', 'Yusuf', '', 'Celik', '2004-10-12', 'buttebuttebutte', 0, 'the butternstaat', 12, '5342JA', 'Den Haag'),
+(1, 'admin@admin.nl', '[\"ROLE_USER\",\"ROLE_INSTRUCTOR\",\"ROLE_ADMIN\"]', '$2y$13$4Q2doAN4LCH84ONmVpfW5OQlkYgfrM9Yd1jMVFFPlINfYYP1cN7Hu', 'Yusuf', '', 'Celik', '2004-10-12', 'buttebuttebutte', 0, 'the butternstaat', 12, '5342JA', 'Den Haag'),
 (2, 'butte@butte.butte', '[\"ROLE_USER\"]', '$2y$13$iUoLBdgml47pnpUc.ad04uDO5m4C6GWpCYyK5YE./Be/qn0sKSf6i', 'staat', NULL, 'butte', '1966-06-03', 'buttebuttebutte', 0, 'the butternstaat', 213, '5342JA', 'Den Haag'),
-(3, 'a@a.a', '[\"ROLE_USER\"]', '$2y$13$QI5gqwStXpAcMVCuMjUtse0iJ.r4WunnzInhUCjTvqTMb7CpTL/RC', 'staat', 'el', 'butte', '2023-04-01', 'buttebuttebutte', 0, 'the butternstaat', 21, '5342JA', 'Den Haag');
+(3, 'a@a.a', '[\"ROLE_USER\",\"ROLE_INSTRUCTOR\"]', '$2y$13$QI5gqwStXpAcMVCuMjUtse0iJ.r4WunnzInhUCjTvqTMb7CpTL/RC', 'staat', 'el', 'butte', '2023-04-01', 'buttebuttebutte', 0, 'the butternstaat', 21, '5342JA', 'Den Haag');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `user_lesson`
+--
+
+CREATE TABLE `user_lesson` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `lesson_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -119,6 +158,13 @@ INSERT INTO `user` (`id`, `email`, `roles`, `password`, `firstname`, `insertion`
 --
 ALTER TABLE `doctrine_migration_versions`
   ADD PRIMARY KEY (`version`);
+
+--
+-- Indexen voor tabel `lesson`
+--
+ALTER TABLE `lesson`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_F87474F3AC78BCF8` (`sport_id`);
 
 --
 -- Indexen voor tabel `messenger_messages`
@@ -143,8 +189,22 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`);
 
 --
+-- Indexen voor tabel `user_lesson`
+--
+ALTER TABLE `user_lesson`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_9D266FCEA76ED395` (`user_id`),
+  ADD KEY `IDX_9D266FCECDF80196` (`lesson_id`);
+
+--
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
+
+--
+-- AUTO_INCREMENT voor een tabel `lesson`
+--
+ALTER TABLE `lesson`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT voor een tabel `messenger_messages`
@@ -156,13 +216,36 @@ ALTER TABLE `messenger_messages`
 -- AUTO_INCREMENT voor een tabel `sport`
 --
 ALTER TABLE `sport`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT voor een tabel `user_lesson`
+--
+ALTER TABLE `user_lesson`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Beperkingen voor geëxporteerde tabellen
+--
+
+--
+-- Beperkingen voor tabel `lesson`
+--
+ALTER TABLE `lesson`
+  ADD CONSTRAINT `FK_F87474F3AC78BCF8` FOREIGN KEY (`sport_id`) REFERENCES `sport` (`id`);
+
+--
+-- Beperkingen voor tabel `user_lesson`
+--
+ALTER TABLE `user_lesson`
+  ADD CONSTRAINT `FK_9D266FCEA76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `FK_9D266FCECDF80196` FOREIGN KEY (`lesson_id`) REFERENCES `lesson` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

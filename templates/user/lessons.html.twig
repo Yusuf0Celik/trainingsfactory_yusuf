@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} | Lessons{% endblock %}
+
+{% block content %}
+    <div class="mt-5 md:px-[25%] p-5 px-10">
+        <h1 class="text-3xl mb-5">Schrijf je in voor een les!</h1>
+        <div class="lesson-days flex gap-3">
+            <div class="px-3 py-1 rounded-3xl bg-green-600 text-white">Vandaag</div>
+            <div class="px-3 py-1 rounded-3xl bg-green-600 text-white">DO 12 JAN</div>
+            <div class="px-3 py-1 rounded-3xl bg-green-600 text-white">VR 13 JAN</div>
+            <div class="px-3 py-1 rounded-3xl bg-green-600 text-white">ZA 14 JAN</div>
+        </div>
+    </div>
+{% endblock %}

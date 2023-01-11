@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} | Dashboard | Lesson{% endblock %}
+
+{% block content %}
+    <div class="content m-5 text-center">
+        <a href="{{ path('app_dashboard_lesson_add') }}" class="text-3xl bg-green-600 text-white rounded-xl px-5 py-3">ADD
+            LESSON</a>
+        <div class="lessons m-5">
+            {{ "now"|date("F j \\a\\t g:ia", "Europe/Amsterdam") }}
+            {% for i in 1..14 %}
+            {{ day = day + 1 }}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

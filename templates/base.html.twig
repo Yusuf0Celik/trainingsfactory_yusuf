@@ -46,6 +46,17 @@
                        class="block py-2 px-3 text-center font-semibold text-grey hover:text-white transition-all">Huisregels</a>
                 </li>
                 {% if app.user %}
+                    {% if 'ROLE_INSTRUCTOR' in app.user.roles %}
+                        <li>
+                            <a href="{{ path('app_dashboard_lesson') }}"
+                               class="block py-2 px-3 text-center font-semibold text-grey hover:text-white transition-all">Lesoverzicht</a>
+                        </li>
+                    {% elseif 'ROLE_USER' in app.user.roles %}
+                        <li>
+                            <a href="{{ path('app_lesson') }}"
+                               class="block py-2 px-3 text-center font-semibold text-grey hover:text-white transition-all">Inschrijven</a>
+                        </li>
+                    {% endif %}
                     {% if 'ROLE_ADMIN' in app.user.roles %}
                         <li>
                             <a href="{{ path('app_dashboard') }}"
