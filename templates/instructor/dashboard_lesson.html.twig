@@ -3,24 +3,18 @@
 {% block title %}{{ parent() }} | Dashboard | Lesson{% endblock %}
 
 {% block content %}
-    <div class="content m-5 text-center">
-        <a href="{{ path('app_dashboard_lesson_add') }}" class="text-3xl bg-green-600 text-white rounded-xl px-5 py-3">ADD
+    <div class="content m-8 text-center">
+        <a href="{{ path('app_dashboard_lesson_add') }}" class="text-3xl bg-green-900 text-white font-semibold rounded-xl px-5 py-3">ADD
             LESSON</a>
-        <div class="lessons flex flex-wrap max-w-[40%] gap-3 m-5 mx-auto">
+        <div class="lessons flex flex-wrap max-w-[40%] gap-3 mt-8 mx-auto justify-center lg:justify-start">
             {% for i in 0..13 %}
-                {% if i == 0 %}
-                    <div class="day w-fit">
-                        {{ "now"|date("l")|slice(0, 3)|upper }}
-                        {{ "now"|date("F")|slice(0, 3)|upper }}
-                        {{ "now"|date("j") }}
-                    </div>
-                {% else %}
-                    <div class="day w-fit">
-                        {{ "now"|date_modify("+"~i~" day")|date("l")|slice(0, 3)|upper }}
-                        {{ "now"|date_modify("+"~i~" day")|date("F")|slice(0, 3)|upper }}
-                        {{ "now"|date_modify("+"~i~" day")|date("j") }}
-                    </div>
-                {% endif %}
+                {% set date = "now"|date_modify("+"~i~" day")|date("Y-m-d") %}
+                {% set day = "now"|date_modify("+"~i~" day")|date("l")|slice(0, 3)|upper %}
+                {% set month = "now"|date_modify("+"~i~" day")|date("F")|slice(0, 3)|upper %}
+                {% set year = "now"|date_modify("+"~i~" day")|date("j") %}
+                <a href="{{ path("app_dashboard_lesson", {date: date}) }}" class="day w-[7rem] py-1 bg-green-600 text-white font-semibold rounded-3xl hover:bg-green-700 transition-all">
+                    {{ day }} {{ month }} {{ year }}
+                </a>
             {% endfor %}
         </div>
     </div>

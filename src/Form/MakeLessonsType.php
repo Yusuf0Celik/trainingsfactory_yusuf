@@ -8,6 +8,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,12 +18,15 @@ class MakeLessonsType extends AbstractType
     {
         $builder
             ->add('time', DateTimeType::class, [
-
+                'attr' => [
+                    'min' => ( new \DateTime() )->format('Y-m-d H:i:s')
+                ]
             ])
             ->add('sport', EntityType::class, [
                 'class' => Sport::class,
-                'choice_label' => 'Sport',
+                'choice_label' => 'name',
             ])
+            ->add('add', SubmitType::class)
         ;
     }
 
