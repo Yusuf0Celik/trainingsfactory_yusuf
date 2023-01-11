@@ -3,4 +3,21 @@
 {% block title %}{{ parent() }}{% endblock %}
 
 {% block content %}
+    {% if app.flashes %}
+        <div class="bg-green-500">{{ app.flashes.succes }}</div>
+    {% endif %}
+    <div class="img-carousel relative w-full bg-black">
+        <div class="carousel-item active slide absolute w-full h-[800px] bg-black overflow-hidden">
+            <img class="w-full h-screen object-cover opacity-60"
+                 src="{{ asset('img/header-1.jpg') }}">
+        </div>
+        <div class="carousel-item inactive slide absolute w-full h-[800px] bg-black overflow-hidden">
+            <img class="w-full h-screen object-cover opacity-60"
+                 src="{{ asset('img/header-2.jpg') }}">
+        </div>
+        <div class="carousel-item inactive slide absolute w-full h-[800px] bg-black overflow-hidden">
+            <img class="w-full h-screen object-cover opacity-60"
+                 src="{{ asset('img/header-3.jpg') }}">
+        </div>
+    </div>
 {% endblock %}

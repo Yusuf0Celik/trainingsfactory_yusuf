@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} | Login{% endblock %}
+
+{% block content %}
+    <form method="post" class="w-full flex flex-col gap-3 flex-wrap">
+
+        {% if app.user %}
+            <div class="mb-3">
+                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            </div>
+        {% endif %}
+        <div class="container bg-grey rounded-xl px-16 py-10 mx-auto mt-[6rem] w-fit drop-shadow-2xl shadow-grey">
+            <h1 class="text-3xl font-semibold mb-5">Login</h1>
+        <label for="inputEmail">Email</label>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark"
+               autocomplete="email" required autofocus>
+        <label for="inputPassword">Password</label>
+        <input type="password" name="password" id="inputPassword" class="form-control flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark" autocomplete="current-password"
+               required>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Remember me
+            </label>
+        </div>
+
+        {% if error %}
+            <div class="alert alert-danger text-red-600">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+        <button class="bg-green-600 text-white px-5 py-3 hover:bg-green-700 active:bg-green-800" type="submit">
+            Sign in
+        </button>
+        </div>
+    </form>
+{% endblock %}

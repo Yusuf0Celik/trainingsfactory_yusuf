@@ -195,7 +195,7 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="93D34DED-086E-57EE-A021-B6B2FD7CCF2E" name="User PK">
+<identifier id="93D34DED-086E-57EE-A021-B6B2FD7CCF2E" name="User_id_UN">
 <createdBy>SD Student</createdBy>
 <createdTime>2022-12-13 10:34:12 UTC</createdTime>
 <ownerDesignName>erd</ownerDesignName>
@@ -203,7 +203,6 @@
 <engineerTo>
 <item key="7770CD89-AA2A-1AFA-44C7-63CA94B91628" value="false"/>
 </engineerTo>
-<pk>true</pk>
 <usedAttributes>
 <attributeRef>44667AE5-2F76-B379-A8F6-58B6905787EA</attributeRef>
 </usedAttributes>

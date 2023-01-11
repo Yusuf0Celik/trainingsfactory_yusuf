@@ -1,0 +1,71 @@
+{% extends './base.html.twig' %}
+
+{% block title %}{{ parent() }} | Users{% endblock %}
+
+{% block content %}
+    <div class="container bg-grey rounded-xl p-6 mx-auto mt-[6rem] w-fit drop-shadow-2xl shadow-grey">
+        {{ form_start(form, {
+            attr: {'class': 'w-full flex flex-col gap-3 flex-wrap'}
+        }) }}
+        <div class="form-divide flex flex-wrap gap-3">
+            {{ form_row(form.username, {
+                label: 'Gebruikersnaam',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+            }) }}
+            {{ form_row(form.gender, {
+                label: 'Gender',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+            }) }}
+        </div>
+        <div class="form-divide flex flex-wrap gap-3">
+            {{ form_row(form.firstname, {
+                label: 'Voornaam',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+            }) }}
+            {{ form_row(form.insertion, {
+                label: 'Tussenvoegsel(s)',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+            }) }}
+            {{ form_row(form.lastname, {
+                label: 'Achternaam',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+            }) }}
+        </div>
+        <div class="form-divide flex flex-wrap gap-3">
+            {{ form_row(form.email, {
+                label: 'Email',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+            }) }}
+            {{ form_row(form.birthdate, {
+                label: 'Geboortedatum',
+                attr: {'class': 'flex'}
+            }) }}
+        </div>
+        <div class="form-divide flex flex-wrap gap-3">
+            {{ form_row(form.street, {
+                label: 'Straatnaam',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+            }) }}
+            {{ form_row(form.streetnumber, {
+                label: 'Straatnummer',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+            }) }}
+            {{ form_row(form.postal_code, {
+                label: 'Postcode',
+                attr: {
+                    'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark',
+                    'max': 6,
+                }
+            }) }}
+            {{ form_row(form.city, {
+                label: 'Stad',
+                attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+            }) }}
+        </div>
+        <div class="buttons">
+            <button type="submit" class="btn bg-primary text-white rounded px-3 py-2">Edit</button>
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
