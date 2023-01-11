@@ -6,10 +6,21 @@
     <div class="content m-5 text-center">
         <a href="{{ path('app_dashboard_lesson_add') }}" class="text-3xl bg-green-600 text-white rounded-xl px-5 py-3">ADD
             LESSON</a>
-        <div class="lessons m-5">
-            {{ "now"|date("F j \\a\\t g:ia", "Europe/Amsterdam") }}
-            {% for i in 1..14 %}
-            {{ day = day + 1 }}
+        <div class="lessons flex flex-wrap max-w-[40%] gap-3 m-5 mx-auto">
+            {% for i in 0..13 %}
+                {% if i == 0 %}
+                    <div class="day w-fit">
+                        {{ "now"|date("l")|slice(0, 3)|upper }}
+                        {{ "now"|date("F")|slice(0, 3)|upper }}
+                        {{ "now"|date("j") }}
+                    </div>
+                {% else %}
+                    <div class="day w-fit">
+                        {{ "now"|date_modify("+"~i~" day")|date("l")|slice(0, 3)|upper }}
+                        {{ "now"|date_modify("+"~i~" day")|date("F")|slice(0, 3)|upper }}
+                        {{ "now"|date_modify("+"~i~" day")|date("j") }}
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
