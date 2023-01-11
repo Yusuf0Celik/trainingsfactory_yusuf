@@ -1,0 +1,21 @@
+{% extends './base.html.twig' %}
+
+{% block title %}{{ parent() }} | Training | Add{% endblock %}
+
+{% block content %}
+    {{ form_start(form, {
+        "attr": {"class": "w-fit mx-auto mt-[8rem]"}
+    }) }}
+    {{ form_row(form.name, {
+        label: 'Name',
+        attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none hover:border-primary focus:border-primary active:border-primaryDark'}
+    }) }}
+    {{ form_row(form.image, {
+        label: 'Image',
+        attr: {'class': 'flex px-3 py-2 focus:outline-none'}
+    }) }}
+    {{ form_row(form.add, {
+        attr: {'class': 'flex px-3 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-all'}
+    }) }}
+    {{ form_end(form) }}
+{% endblock %}

@@ -3,4 +3,22 @@
 {% block title %}{{ parent() }} | Training{% endblock %}
 
 {% block content %}
+    <div class="button_training text-center my-4 px-8 py-4">
+        <a href="{{ path("app_dashboard_training_add") }}" class="text-3xl px-8 py-4 bg-green-700 text-white rounded">Add
+            Trainingsvorm</a>
+    </div>
+    <div class="flex justify-center w-full">
+        {% for sport in sports %}
+            <div class="max-w-sm w-fit p-6 bg-white border border-gray-200 rounded-lg shadow-md relative">
+                <img src="{{ asset(sport.image) }}" alt="{{ sport.name }}">
+                <h2 class="my-3 text-2xl font-semibold tracking-tight text-center text-gray-900">{{ sport.name }}</h2>
+                <a href="{{ path('app_dashboard_training_delete', {id: sport.id}) }}" class="w-[36px] h-[36px] p-1 absolute top-0 right-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         class="fill-black hover:fill-red-600 transition-all">
+                        <path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm10.618-3L15 2H9L7.382 4H3v2h18V4z"></path>
+                    </svg>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
