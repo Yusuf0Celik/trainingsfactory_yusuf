@@ -25,9 +25,6 @@ class EditUserType extends AbstractType
             ])
             ->add('username')
             ->add('gender', ChoiceType::class, [
-                'attr' => [
-                    'class' => ''
-                ],
                 'choices' => [
                     'Man' => '0',
                     'Vrouw' => '1',

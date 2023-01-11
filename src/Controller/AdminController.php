@@ -45,7 +45,7 @@ class AdminController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($user);
             $entityManager->flush();
-            $this->redirectToRoute('app_dashboard_users');
+            return $this->redirectToRoute('app_dashboard_users');
         }
 
         return $this->render('admin/dashboard_edit.html.twig', [
@@ -65,7 +65,7 @@ class AdminController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->remove($user);
             $entityManager->flush();
-            $this->redirectToRoute('app_dashboard_users');
+            return $this->redirectToRoute('app_dashboard_users');
         }
 
         return $this->render('admin/dashboard_delete.html.twig', [

@@ -13,11 +13,7 @@ class DeleteUserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('delete', SubmitType::class, [
-                'attr' => [
-                    'class' => 'btn bg-red-600 text-white px-8 py-3 mt-3'
-                ],
-            ])
+            ->add('delete', SubmitType::class)
         ;
 
     }
