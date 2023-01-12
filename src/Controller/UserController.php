@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[IsGranted('ROLE_USER')]
 class UserController extends AbstractController
 {
-    #[Route('/lesson', name: 'app_lessons')]
+    #[Route('/lesson', name: 'app_lesson')]
     public function lessons(): Response
     {
         return $this->render('user/lessons.html.twig');
