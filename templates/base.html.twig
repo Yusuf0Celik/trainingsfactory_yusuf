@@ -53,7 +53,7 @@
                         </li>
                     {% elseif 'ROLE_USER' in app.user.roles %}
                         <li>
-                            <a href="{{ path('app_lesson') }}"
+                            <a href="{{ path('app_lessons', {date: "now"|date("Y-m-d")}) }}"
                                class="block py-2 px-3 text-center font-semibold text-grey hover:text-white transition-all">Inschrijven</a>
                         </li>
                     {% endif %}
