@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 11 jan 2023 om 15:29
+-- Gegenereerd op: 12 jan 2023 om 10:30
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.6
 
@@ -46,7 +46,8 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20230111080342', '2023-01-11 11:26:22', 29),
 ('DoctrineMigrations\\Version20230111111118', '2023-01-11 12:11:24', 51),
 ('DoctrineMigrations\\Version20230111112003', '2023-01-11 12:20:06', 85),
-('DoctrineMigrations\\Version20230111112114', '2023-01-11 12:21:16', 55);
+('DoctrineMigrations\\Version20230111112114', '2023-01-11 12:21:16', 55),
+('DoctrineMigrations\\Version20230112084518', '2023-01-12 09:45:27', 126);
 
 -- --------------------------------------------------------
 
@@ -56,9 +57,20 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 
 CREATE TABLE `lesson` (
   `id` int(11) NOT NULL,
-  `time` datetime NOT NULL,
-  `sport_id` int(11) NOT NULL
+  `time` time NOT NULL,
+  `sport_id` int(11) NOT NULL,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `lesson`
+--
+
+INSERT INTO `lesson` (`id`, `time`, `sport_id`, `date`) VALUES
+(1, '14:00:00', 1, '2023-01-12'),
+(2, '14:00:00', 1, '2023-01-12'),
+(3, '14:00:00', 1, '2023-01-12'),
+(4, '05:00:00', 1, '2023-01-13');
 
 -- --------------------------------------------------------
 
@@ -204,7 +216,7 @@ ALTER TABLE `user_lesson`
 -- AUTO_INCREMENT voor een tabel `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT voor een tabel `messenger_messages`
