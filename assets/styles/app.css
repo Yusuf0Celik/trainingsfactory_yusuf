@@ -34,3 +34,7 @@ body {
     padding: .5rem .75rem;
     border: 2px solid white;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}

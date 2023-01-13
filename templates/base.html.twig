@@ -75,7 +75,7 @@
                     </li>
                     <li>
                         <a href="{{ path('app_register') }}"
-                           class="block py-2 px-3 text-center text-xl font-bold bg-primary rounded text-grey hover:text-white transition-all">Wordt
+                           class="block py-2 px-3 text-center font-bold bg-primary rounded text-grey hover:text-white transition-all">Wordt
                             nu lid!</a>
                     </li>
                 {% endif %}
@@ -83,8 +83,9 @@
         </div>
     </div>
 </nav>
-<main class="pt-[88px]">
+<main class="h-fit">
     {% block content %}{% endblock %}
 </main>
+<footer class="bg-grey p-3 text-center">Training Factory © Copyright | 2023</footer>
 </body>
 </html>
