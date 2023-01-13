@@ -3,9 +3,9 @@
 {% block title %}{{ parent() }} | Training | Delete{% endblock %}
 
 {% block content %}
-    <div class="div">
+    <div class="w-fit mx-auto pt-[8rem] pb-[17.75rem]">
         <h1 class="text-3xl text-center mb-5">{{ sport.name }}</h1>
-        <img src="{{ asset(sport.image) }}" alt="{{ sport.name }}" class="w-[30rem]">
+        <img src="{{ asset(sport.image) }}" alt="{{ sport.name }}" class="w-[40rem] my-[1rem]">
+        {{ form(form) }}
     </div>
-    {{ form(form) }}
 {% endblock %}

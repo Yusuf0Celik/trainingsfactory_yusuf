@@ -54,7 +54,7 @@ class AdminController extends AbstractController
             return $this->redirectToRoute('app_dashboard_users');
         }
 
-        return $this->render('admin/dashboard_edit.html.twig', [
+        return $this->render('admin/dashboard_user_edit.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);
@@ -74,7 +74,7 @@ class AdminController extends AbstractController
             return $this->redirectToRoute('app_dashboard_users');
         }
 
-        return $this->render('admin/dashboard_delete.html.twig', [
+        return $this->render('admin/dashboard_user_delete.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);

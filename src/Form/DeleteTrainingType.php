@@ -15,7 +15,7 @@ class DeleteTrainingType extends AbstractType
         $builder
             ->add('delete', SubmitType::class, [
                 'attr' => [
-                    'class' => 'bg-red-600 text-white p-2 hover:bg-red-700',
+                    'class' => 'bg-transarent font-semibold text-red-600 p-2 rounded border-2 border-red-600 transition-all hover:bg-red-600 hover:text-white',
             ]])
         ;
     }

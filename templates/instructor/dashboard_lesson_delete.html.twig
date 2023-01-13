@@ -3,14 +3,16 @@
 {% block title %}{{ parent() }} | Dashboard | Lesson{% endblock %}
 
 {% block content %}
-    {{ form_start(form, {
-        "attr": {"class": "w-fit mx-auto mt-[8rem] px-6 py-4 bg-gray-200 rounded text-center"}
-    }) }}
-    <h1 class="text-3xl py-6 font-semibold text-red-600">DELETE LESSON</h1>
-    <img src="{{ asset(lesson.sport.image) }}" alt="{{ lesson.sport.name }}" class="max-w-[30rem]">
-    <h2 class="text-xl">{{ lesson.time|date('H:i') }} {{ lesson.date|date('d-m-Y') }}</h2>
-    {{ form_row(form.delete, {
-        attr: {'class': 'flex px-3 py-2 mt-5 mx-auto bg-transparent text-red-600 border-2 font-semibold border-red-600 rounded hover:bg-red-600 hover:text-white transition-all'}
-    }) }}
-    {{ form_end(form) }}
+    <div class="pt-[8rem] pb-[14.5rem]">
+        {{ form_start(form, {
+            "attr": {"class": "w-fit mx-auto px-6 py-4 bg-gray-200 rounded text-center"}
+        }) }}
+        <h1 class="text-3xl py-6 font-semibold text-red-600">DELETE LESSON</h1>
+        <img src="{{ asset(lesson.sport.image) }}" alt="{{ lesson.sport.name }}" class="max-w-[30rem]">
+        <h2 class="text-xl">{{ lesson.time|date('H:i') }} {{ lesson.date|date('d-m-Y') }}</h2>
+        {{ form_row(form.delete, {
+            attr: {'class': 'flex px-3 py-2 mt-5 mx-auto bg-transparent text-red-600 border-2 font-semibold border-red-600 rounded hover:bg-red-600 hover:text-white transition-all'}
+        }) }}
+        {{ form_end(form) }}
+    </div>
 {% endblock %}

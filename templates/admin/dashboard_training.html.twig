@@ -3,11 +3,11 @@
 {% block title %}{{ parent() }} | Training{% endblock %}
 
 {% block content %}
-    <div class="button_training text-center my-4 px-8 py-4">
+    <div class="button_training text-center pt-[8rem] pb-[3rem] px-8">
         <a href="{{ path("app_dashboard_training_add") }}" class="text-3xl px-8 py-4 bg-green-700 text-white rounded">Add
             Trainingsvorm</a>
     </div>
-    <div class="flex flex-wrap max-w-screen-xl justify-center mx-auto w-full gap-3">
+    <div class="flex flex-wrap max-w-screen-xl justify-center mx-auto w-full gap-3 mb-[2rem]">
         {% for sport in sports %}
             <div class="max-w-sm w-fit p-6 bg-white border border-gray-200 rounded-lg shadow-md relative">
                 <img src="{{ asset(sport.image) }}" alt="{{ sport.name }}" class="h-[15rem] w-auto object-cover">
