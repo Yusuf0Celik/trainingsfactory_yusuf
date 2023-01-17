@@ -8,6 +8,19 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="User_lesson_ID" id="E6E42ACD-6A40-8B3B-24C9-A147B3383641">
+<createdBy>SD Student</createdBy>
+<createdTime>2023-01-09 09:21:32 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
 <Column name="Lesson_id" id="49D1CC0B-86F8-4E59-AB46-B5F5AF76B63A">
 <createdBy>SD Student</createdBy>
 <createdTime>2023-01-09 09:21:31 UTC</createdTime>
@@ -34,19 +47,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="User_lesson_ID" id="E6E42ACD-6A40-8B3B-24C9-A147B3383641">
-<createdBy>SD Student</createdBy>
-<createdTime>2023-01-09 09:21:32 UTC</createdTime>
-<ownerDesignName>erd</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementColumn>true</autoIncrementColumn>
-<identityColumn>true</identityColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<isSurrogateColumn>true</isSurrogateColumn>
-</Column>
 <Column name="User_User_ID" id="39155E7F-40F0-6A48-E778-056E8A47FE60">
 <createdBy>SD Student</createdBy>
 <createdTime>2023-01-09 09:21:32 UTC</createdTime>
@@ -57,8 +57,19 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="User_User_ID2" id="E5F17341-7524-BC24-ADD1-B9059B30ED27">
+<createdBy>yc569</createdBy>
+<createdTime>2023-01-17 20:09:51 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="D40C67AE-5CA1-3589-139A-E1B3F46F93DB" referredColumn="3E0FDA0B-A581-520A-927E-3A34530A2D41"/>
+<colAssociation fkAssociation="F91A3A04-EC39-6661-037E-77D4CD3532C6" referredColumn="3E0FDA0B-A581-520A-927E-3A34530A2D41"/>
 </associations>
 </Column>
 </columns>
@@ -95,15 +106,15 @@
 <colUsage columnID="49D1CC0B-86F8-4E59-AB46-B5F5AF76B63A"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="8677F439-1A8C-7E5B-6AEE-213591CA2D16" name="User_lesson_User_FK">
-<createdBy>SD Student</createdBy>
-<createdTime>2023-01-09 09:21:32 UTC</createdTime>
+<ind_PK_UK id="030C18A3-0BC5-B76F-1663-063CE269817B" name="User_lesson_User_FK">
+<createdBy>yc569</createdBy>
+<createdTime>2023-01-17 20:09:51 UTC</createdTime>
 <generatorID>79200200-F0FB-6D2A-794A-2D8CAEB30F48</generatorID>
 <ownerDesignName>erd</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="39155E7F-40F0-6A48-E778-056E8A47FE60"/>
+<colUsage columnID="E5F17341-7524-BC24-ADD1-B9059B30ED27"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

@@ -130,7 +130,7 @@ class AdminController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $projectDir = $this->getParameter('kernel.project_dir');
-            $filesystem->remove($projectDir . '/public/img/' . $sport->getImage());
+            $filesystem->remove($projectDir . '/public/' . $sport->getImage());
 
             $entityManager->remove($sport);
             $entityManager->flush();
