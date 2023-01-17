@@ -16,19 +16,23 @@ class Lesson
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToMany(targetEntity: User::class)]
-    private Collection $user;
-
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $time = null;
-
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
     private ?Sport $sport = null;
 
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $date = null;
+
+    #[ORM\Column(type: Types::TIME_MUTABLE)]
+    private ?\DateTimeInterface $time = null;
+
+    #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'lessons')]
+    private Collection $users;
+
     public function __construct()
     {
         $this->user = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -36,26 +40,26 @@ class Lesson
         return $this->id;
     }
 
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUser(): Collection
+    public function getSport(): ?Sport
     {
-        return $this->user;
+        return $this->sport;
     }
 
-    public function addUser(User $user): self
+    public function setSport(?Sport $sport): self
     {
-        if (!$this->user->contains($user)) {
-            $this->user->add($user);
-        }
+        $this->sport = $sport;
 
         return $this;
     }
 
-    public function removeUser(User $user): self
+    public function getDate(): ?\DateTimeInterface
     {
-        $this->user->removeElement($user);
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }
@@ -72,14 +76,29 @@ class Lesson
         return $this;
     }
 
-    public function getSport(): ?Sport
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUsers(): Collection
     {
-        return $this->sport;
+        return $this->users;
     }
 
-    public function setSport(?Sport $sport): self
+    public function addUser(User $user): self
     {
-        $this->sport = $sport;
+        if (!$this->users->contains($user)) {
+            $this->users->add($user);
+            $user->addLesson($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->removeElement($user)) {
+            $user->removeLesson($this);
+        }
 
         return $this;
     }

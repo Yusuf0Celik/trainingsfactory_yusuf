@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} | Dashboard | Lesson{% endblock %}
+
+{% block content %}
+    <div class="pt-[8rem] pb-[23.1rem]">
+        {{ form_start(form, {
+            "attr": {"class": "w-fit mx-auto px-6 py-4 bg-gray-200 rounded"}
+        }) }}
+        <h1 class="text-3xl py-6 font-semibold">ADD LESSON</h1>
+        {{ form_row(form.date, {
+            label: 'Datum',
+            attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none'}
+        }) }}
+        {{ form_row(form.time, {
+            label: 'Tijdstip',
+            attr: {'class': 'flex px-3 py-2 border-2 border-transparent focus:outline-none'}
+        }) }}
+        {{ form_row(form.sport, {
+            label: 'Sport',
+            attr: {'class': 'flex px-3 my-4 py-2 focus:outline-none'}
+        }) }}
+        {{ form_row(form.add, {
+            attr: {'class': 'flex px-3 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-all'}
+        }) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

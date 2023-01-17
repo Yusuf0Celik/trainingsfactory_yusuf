@@ -25,4 +25,10 @@ class GuestController extends AbstractController
     {
         return $this->render('app/rules.html.twig');
     }
+
+    #[Route('/contact', name: 'app_contact')]
+    public function contact(): Response
+    {
+        return $this->render('app/contact.html.twig');
+    }
 }

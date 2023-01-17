@@ -3,21 +3,41 @@
 {% block title %}{{ parent() }}{% endblock %}
 
 {% block content %}
-    {% if app.flashes %}
-        <div class="bg-green-500">{{ app.flashes.succes }}</div>
-    {% endif %}
-    <div class="img-carousel relative w-full bg-black">
-        <div class="carousel-item active slide absolute w-full h-[800px] bg-black overflow-hidden">
-            <img class="w-full h-screen object-cover opacity-60"
-                 src="{{ asset('img/header-1.jpg') }}">
+    <div class="img-carousel relative w-full bg-black h-screen">
+        <div class="images relative w-full bg-black">
+            <div class="carousel-item active slide absolute w-full h-screen bg-black overflow-hidden">
+                <img class="w-full h-screen object-cover opacity-60"
+                     src="{{ asset('img/header-1.jpg') }}">
+            </div>
+            <div class="carousel-item inactive slide absolute w-full h-screen bg-black overflow-hidden">
+                <img class="w-full h-screen object-cover opacity-60"
+                     src="{{ asset('img/header-2.jpg') }}">
+            </div>
+            <div class="carousel-item inactive slide absolute w-full h-screen bg-black overflow-hidden">
+                <img class="w-full h-screen object-cover opacity-60"
+                     src="{{ asset('img/header-3.jpg') }}">
+            </div>
         </div>
-        <div class="carousel-item inactive slide absolute w-full h-[800px] bg-black overflow-hidden">
-            <img class="w-full h-screen object-cover opacity-60"
-                 src="{{ asset('img/header-2.jpg') }}">
-        </div>
-        <div class="carousel-item inactive slide absolute w-full h-[800px] bg-black overflow-hidden">
-            <img class="w-full h-screen object-cover opacity-60"
-                 src="{{ asset('img/header-3.jpg') }}">
+        <div class="title-container h-screen flex justify-center lg:justify-start">
+            <div class="title text-white max-w-[33.5rem] absolute top-[15rem] mx-auto lg:ml-[20rem] text-center lg:text-start">
+                <h1 class="font-bold text-[4rem]">Breng Jezelf Naar<br> Een Nieuwe Level</h1>
+                <p class="text-[1.5rem]">Leer verdedigen, samenwerking en geduld en breng je mentale denkwijze
+                    omhoog</p>
+                {% if app.user %}
+                {% else %}
+                    <ul class="flex justify-center lg:justify-start gap-5 pt-5">
+                        <li>
+                            <a href="{{ path('app_login') }}"
+                               class="block py-2 px-3 text-center font-bold border-2 border-transparent bg-primary rounded text-grey hover:text-white hover:bg-transparent hover:border-primary transition-all">Login</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_register') }}"
+                               class="block py-2 px-3 text-center font-bold border-2 border-transparent bg-primary rounded text-grey hover:text-white hover:bg-transparent hover:border-primary transition-all">Wordt
+                                nu lid!</a>
+                        </li>
+                    </ul>
+                {% endif %}
+            </div>
         </div>
     </div>
 {% endblock %}

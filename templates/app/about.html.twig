@@ -2,26 +2,21 @@
 {% block title %}{{ parent() }} | About{% endblock %}
 
 {% block content %}
-  <br><div class="p-9 pt-9 px-10 border-2 border-slate-200 shadow-md h-[700px] max-w-[900px] mx-auto flex grid   gap-1">
-      <div class="col-start-2 col-span-4">
-          <h1 class="text-lg font-medium"> Welkom op mijn Training factory site</h1><br>
-          <p class="text-md font-medium"> Hi ik ben J. Maipauw hbe ervaring in MMA en kickboxen. Ik heb deze website laten maken voor
-              degene die willen boksen, kickboksen vooral en MMA willen doen kunnen hier inschrijven en om kickbox
-              meer te promoten bij een groter publiek. Het is voor jong en oud en daarnaast zijn er stootzak trainingen, bootcamps en fitness-uren.
-              Zodat ze onze team joinen en kunnen beginnen met trainen en lessen. Zelf zit onze sportschool
-              in Den Haag.
-          </p>
-      </div>
-      <br>
-      <div class="border-1 border-slate-300 shadow-md   h-[200px] max-w-[280px] mx-auto ">
-          <h4>"Hi ik ben Yusuf (18) een van de medestudent die aan dit project  meewerk."</h4><br>
-          <div>Yusuf</div>
-          <div>software developer</div>
-      </div>
-      <div class="border-1 border-slate-300 shadow-md h-[200px] max-w-[280px] mx-auto col-end-7 col-span-2">
-          <h4>"Hi ik ben Emmanuel (19) een van de medestudent die aan dit project  meewerk."</h4><br>
-          <div>Emmanuel owusu</div>
-          <div>software developer</div>
-      </div>
-  </div>
+    <div class="pt-[88px] p-5 px-10 h-[95vh] flex flex-col xl:flex-row justify-center align-middle w-full">
+        <div class="max-w-[33rem] mx-auto mt-36 lg:mt-32">
+            <h1 class="text-4xl font-semibold"> Welkom bij de Training Factory</h1><br>
+            <p class="text-[1.25rem]">
+                Ons doel was om weg te dwalen van de intimidatiefactor van traditionele fitnessscholen. Of het nu gaat
+                om de rijen en rijen verwarrende apparatuur of het ontbreken van een inclusieve, teamgerichte sfeer, we
+                wisten dat we iets nieuws wilden creëren - een programma waarbij elke dagelijkse training anders en
+                opwindend was, waarbij elk lid kon vertrouwen op persoonlijke hulp en richting. Het belangrijkste was
+                dat we een plek wilden creëren waar mensen van verschillende leeftijden en vaardigheidsniveaus deel gaan
+                uitmaken van een hechte gemeenschap.
+            </p>
+        </div>
+        <div class="mx-auto mt-10 lg:mt-14">
+            <img src="img{{ asset('5c056d673458a80f43e84a11_Founders.png') }}" alt="5c056d673458a80f43e84a11_Founders"
+                 class="w-fit h-[30rem] object-scale-down">
+        </div>
+    </div>
 {% endblock %}
