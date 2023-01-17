@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2023 at 03:30 PM
+-- Generation Time: Jan 17, 2023 at 11:35 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -71,7 +71,6 @@ INSERT INTO `lesson` (`id`, `time`, `sport_id`, `date`) VALUES
 (1, '14:00:00', 1, '2023-01-12'),
 (2, '16:00:00', 1, '2023-01-12'),
 (4, '20:00:00', 1, '2023-01-13'),
-(6, '18:00:00', 3, '2023-01-18'),
 (7, '18:00:00', 1, '2023-01-17'),
 (8, '20:00:00', 1, '2023-01-17');
 
@@ -149,9 +148,11 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `firstname`, `insertion`, `lastname`, `birthdate`, `username`, `gender`, `street`, `streetnumber`, `postal_code`, `city`) VALUES
 (1, 'admin@admin.nl', '[\"ROLE_USER\",\"ROLE_INSTRUCTOR\",\"ROLE_ADMIN\"]', '$2y$13$4Q2doAN4LCH84ONmVpfW5OQlkYgfrM9Yd1jMVFFPlINfYYP1cN7Hu', 'Yusuf', '', 'Celik', '2004-10-12', 'buttebuttebutte', 0, 'the butternstaat', 12, '5342JA', 'Den Haag'),
-(2, 'b@b.b', '[\"ROLE_USER\"]', '$2y$13$iUoLBdgml47pnpUc.ad04uDO5m4C6GWpCYyK5YE./Be/qn0sKSf6i', 'staat', NULL, 'butte', '1966-06-03', 'buttebuttebutte', 0, 'the butternstaat', 213, '5342JA', 'Den Haag'),
-(3, 'a@a.a', '[\"ROLE_USER\",\"ROLE_INSTRUCTOR\"]', '$2y$13$QI5gqwStXpAcMVCuMjUtse0iJ.r4WunnzInhUCjTvqTMb7CpTL/RC', 'staat', 'el', 'butte', '2023-04-01', 'buttebuttebutte', 0, 'the butternstaat', 21, '5342JA', 'Den Haag'),
-(4, 'c@c.c', '[\"ROLE_USER\"]', '$2y$13$mJoY9EiaUgU/j9cgDcTjf.8juQIx0mapBQUfeJQAt5JtRakopllDG', 'Muhammed', NULL, 'Aktas', '2003-11-07', 'mootje', 0, 'Jan ten Brinkstraat', 163, '2522HX', 'Den Haag');
+(2, 'a@a.a', '[\"ROLE_USER\",\"ROLE_INSTRUCTOR\"]', '$2y$13$QI5gqwStXpAcMVCuMjUtse0iJ.r4WunnzInhUCjTvqTMb7CpTL/RC', 'staat', 'el', 'butte', '2023-04-01', 'buttebuttebutte', 0, 'the butternstaat', 21, '5342JA', 'Den Haag'),
+(3, 'b@b.b', '[\"ROLE_USER\"]', '$2y$13$iUoLBdgml47pnpUc.ad04uDO5m4C6GWpCYyK5YE./Be/qn0sKSf6i', 'staat', NULL, 'butte', '1966-06-03', 'buttebuttebutte', 0, 'the butternstaat', 213, '5342JA', 'Den Haag'),
+(4, 'c@c.c', '[\"ROLE_USER\"]', '$2y$13$mJoY9EiaUgU/j9cgDcTjf.8juQIx0mapBQUfeJQAt5JtRakopllDG', 'Muhammed', NULL, 'Aktas', '2003-11-07', 'mootje', 0, 'Jan ten Brinkstraat', 163, '2522HX', 'Den Haag'),
+(5, 'd@d.d', '[\"ROLE_USER\"]', '$2y$13$E2K8UpFyvj0eEl42hyRcruqgF61iXS5HWCSJLfCL5W2mL7wZtotYW', 'Yusuf', NULL, 'Celik', '2004-02-12', 'Aexer', 0, 'Van Mierisstraat', 177, '2526NR', 'Den Haag'),
+(7, 'e@e.e', '[\"ROLE_USER\"]', '$2y$13$AldWR4UiVryOW5ZSUVZMZuH6N.CfHsgufbrBBiSy3OD1Gvx9VHQli', 'Yusuf', NULL, 'Celik', '2004-02-12', 'Aexer', 1, 'Van Mierisstraat', 177, '2526NR', 'Den Haag');
 
 -- --------------------------------------------------------
 
@@ -226,7 +227,7 @@ ALTER TABLE `user_lesson`
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `messenger_messages`
@@ -238,13 +239,13 @@ ALTER TABLE `messenger_messages`
 -- AUTO_INCREMENT for table `sport`
 --
 ALTER TABLE `sport`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
