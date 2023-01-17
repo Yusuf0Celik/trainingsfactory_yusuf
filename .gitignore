@@ -29,3 +29,9 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+.idea/php.xml
+.idea/.idea/.idea.iml
+.idea/.idea/modules.xml
+.idea/.idea/workspace.xml
+.idea/phpunit.xml
+.idea/symfony2.xml

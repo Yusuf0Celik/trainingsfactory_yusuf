@@ -1,19 +1,99 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Home{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Training Factory{% endblock %}</title>
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block content %}{% endblock %}
-    </body>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+<nav class="bg-primaryDark px-4 py-2.5 h-[88px] justify-center flex align-middle fixed z-50 left-0 right-0">
+    <div class="container flex flex-wrap items-center justify-between">
+        <a href="{{ path('app_home') }}" class="text-2xl whitespace-nowrap text-white">
+            Training Factory
+        </a>
+        <button data-collapse-toggle="navbar-default" type="button"
+                class="navbar-button inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg lg:hidden focus:outline-none border-2 border-transparent hover:border-2 hover:border-white">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-6 h-6 fill-white" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                      clip-rule="evenodd"></path>
+            </svg>
+        </button>
+        <div class="nav-list hidden align-middle w-full lg:block lg:w-auto bg-primaryDark">
+            <ul class="flex flex-col align-middle p-4 mt-4 lg:flex-row lg:space-x-8 lg:mt-0 lg:text-sm lg:font-medium">
+                <li>
+                    <a href="{{ path('app_home') }}"
+                       class="block py-2 px-3 text-center font-semibold text-grey hover:text-white transition-all">Home</a>
+                </li>
+                <li>
+                    <a href="{{ path('app_about') }}"
+                       class="block py-2 px-3 text-center font-semibold text-grey hover:text-white transition-all">About</a>
+                </li>
+                <li>
+                    <a href="{{ path('app_rules') }}"
+                       class="block py-2 px-3 text-center font-semibold text-grey hover:text-white transition-all">Huisregels</a>
+                </li>
+                <li>
+                    <a href="{{ path('app_contact') }}"
+                       class="block py-2 px-3 text-center font-semibold text-grey hover:text-white transition-all">Contact</a>
+                </li>
+                {% if app.user %}
+                    {% if 'ROLE_INSTRUCTOR' in app.user.roles %}
+                        <li>
+                            <a href="{{ path('app_dashboard_lesson', {date: "now"|date("Y-m-d")}) }}"
+                               class="block py-2 px-3 text-center font-semibold text-grey hover:text-white transition-all">Lesoverzicht</a>
+                        </li>
+                    {% elseif 'ROLE_USER' in app.user.roles %}
+                        <li>
+                            <a href="{{ path('app_account') }}"
+                               class="block py-2 px-3 text-center font-semibold text-grey hover:text-white transition-all">Account</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_lessons', {date: "now"|date("Y-m-d")}) }}"
+                               class="block py-2 px-3 text-center font-semibold text-grey hover:text-white transition-all">Inschrijven</a>
+                        </li>
+                    {% endif %}
+                    {% if 'ROLE_ADMIN' in app.user.roles %}
+                        <li>
+                            <a href="{{ path('app_dashboard') }}"
+                               class="block py-2 px-3 text-center font-semibold text-grey hover:text-white transition-all">Dashboard</a>
+                        </li>
+                    {% endif %}
+                    <li>
+                        <a href="{{ path('app_logout') }}"
+                           class="block py-2 px-3 text-center font-semibold text-grey hover:text-white transition-all">Log
+                            uit</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{{ path('app_login') }}"
+                           class="block py-2 px-3 text-center font-semibold text-grey hover:text-white transition-all">Login</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_register') }}"
+                           class="block py-2 px-3 text-center font-bold bg-primary rounded text-grey hover:text-white transition-all">Wordt
+                            nu lid!</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+<main class="h-fit">
+    {% block content %}{% endblock %}
+</main>
+<footer class="bg-grey p-3 text-center">Training Factory © Copyright | 2023</footer>
+</body>
 </html>

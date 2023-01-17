@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ parent() }} | About{% endblock %}
+
+{% block content %}
+    <div class="pt-[88px] p-5 px-10 h-[95vh] flex flex-col xl:flex-row justify-center align-middle w-full">
+        <div class="max-w-[33rem] mx-auto mt-36 lg:mt-32">
+            <h1 class="text-4xl font-semibold"> Welkom bij de Training Factory</h1><br>
+            <p class="text-[1.25rem]">
+                Ons doel was om weg te dwalen van de intimidatiefactor van traditionele fitnessscholen. Of het nu gaat
+                om de rijen en rijen verwarrende apparatuur of het ontbreken van een inclusieve, teamgerichte sfeer, we
+                wisten dat we iets nieuws wilden creëren - een programma waarbij elke dagelijkse training anders en
+                opwindend was, waarbij elk lid kon vertrouwen op persoonlijke hulp en richting. Het belangrijkste was
+                dat we een plek wilden creëren waar mensen van verschillende leeftijden en vaardigheidsniveaus deel gaan
+                uitmaken van een hechte gemeenschap.
+            </p>
+        </div>
+        <div class="mx-auto mt-10 lg:mt-14">
+            <img src="img{{ asset('5c056d673458a80f43e84a11_Founders.png') }}" alt="5c056d673458a80f43e84a11_Founders"
+                 class="w-fit h-[30rem] object-scale-down">
+        </div>
+    </div>
+{% endblock %}

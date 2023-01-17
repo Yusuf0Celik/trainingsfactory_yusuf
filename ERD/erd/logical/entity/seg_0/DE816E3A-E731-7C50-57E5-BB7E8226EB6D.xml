@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DE816E3A-E731-7C50-57E5-BB7E8226EB6D" name="lesson">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DE816E3A-E731-7C50-57E5-BB7E8226EB6D" name="Lesson">
 <createdBy>SD Student</createdBy>
 <createdTime>2022-12-13 10:51:08 UTC</createdTime>
 <ownerDesignName>erd</ownerDesignName>
@@ -39,7 +39,7 @@
 <logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="sport_id" id="D1AB6758-EDF2-BD70-DFE3-80A82082ED6A">
+<Attribute name="Sport id" id="D1AB6758-EDF2-BD70-DFE3-80A82082ED6A">
 <createdBy>SD Student</createdBy>
 <createdTime>2022-12-13 11:01:33 UTC</createdTime>
 <generatorID>8430CD9E-9779-41A8-F355-3CD438178975</generatorID>
@@ -53,7 +53,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="user_id" id="968A4192-F5E6-36A9-CAA6-A89E22B1BA73">
+<Attribute name="user id" id="968A4192-F5E6-36A9-CAA6-A89E22B1BA73">
 <createdBy>SD Student</createdBy>
 <createdTime>2022-12-13 11:13:35 UTC</createdTime>
 <generatorID>6C814E0A-683B-A9AE-F63A-C947CE6911CF</generatorID>
@@ -69,7 +69,7 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="E9EAC528-5C69-C5AF-1293-B0701B4BC86B" name="lesson PK">
+<identifier id="E9EAC528-5C69-C5AF-1293-B0701B4BC86B" name="Lesson_PK">
 <createdBy>SD Student</createdBy>
 <createdTime>2022-12-13 10:54:08 UTC</createdTime>
 <ownerDesignName>erd</ownerDesignName>

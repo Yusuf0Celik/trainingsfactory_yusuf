@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} | Lessons{% endblock %}
+
+{% block content %}
+    <div class="pt-20">
+        <div class="content m-8 text-center">
+            <div class="dates flex flex-wrap max-w-[40%] gap-3 mt-8 mx-auto justify-center lg:justify-start">
+                {% for i in 0..13 %}
+                    {% set date = "now"|date_modify("+"~i~" day")|date("Y-m-d") %}
+                    {% set day = "now"|date_modify("+"~i~" day")|date("l")|slice(0, 3)|upper %}
+                    {% set month = "now"|date_modify("+"~i~" day")|date("F")|slice(0, 3)|upper %}
+                    {% set year = "now"|date_modify("+"~i~" day")|date("j") %}
+                    {% if i == 0 %}
+                        <a href="{{ path("app_lessons", {date: date}) }}"
+                           class="day w-[7rem] py-1 bg-green-600 text-white font-semibold rounded-3xl hover:bg-green-700 transition-all">
+                            Vandaag
+                        </a>
+                    {% else %}
+                        <a href="{{ path("app_lessons", {date: date}) }}"
+                           class="day w-[7rem] py-1 bg-green-600 text-white font-semibold rounded-3xl hover:bg-green-700 transition-all">
+                            {{ day }} {{ month }} {{ year }}
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="lessons flex gap-3 justify-center mt-8">
+                {% if lessons == [] %}
+                    <div class="text-3xl mt-6 font-semibold">Geen lessen ingepland deze dag...</div>
+                {% else %}
+                    {% for lesson in lessons %}
+                        <div class="max-w-sm w-fit p-6 bg-white border border-gray-200 rounded-lg shadow-md relative leading-[3rem]">
+                            <img src="{{ asset(lesson.sport.image) }}" alt="{{ lesson.sport.name }}"
+                                 class="h-[15rem] w-auto object-cover">
+                            <p class="text-xl">{{ lesson.date|date('d-m-Y') }}</p>
+                            <p class="text-xl">{{ lesson.time|date('H:i') }}</p>
+                            {% if lesson in app.user.lessons %}
+                                <a href="{{ path('app_lesson_signing_out', {id: lesson.id}) }}"
+                                   class="px-3 py-2 mt-4 hover:bg-transparent hover:text-red-600 border-2 border-red-600 font-semibold rounded bg-red-600 text-white transition-all">Schijf
+                                    je uit</a>
+                            {% else %}
+                                <a href="{{ path('app_lesson_signing', {id: lesson.id}) }}"
+                                   class="px-3 py-2 mt-4 hover:bg-transparent hover:text-green-600 border-2 border-green-600 font-semibold rounded bg-green-600 text-white transition-all">Schijf
+                                    je in!</a>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

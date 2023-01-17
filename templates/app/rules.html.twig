@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} | Huisregels{% endblock %}
+
+{% block content %}
+    <h2 class="text-2xl font-medium py-6 text-center">De 10 huisregels</h2>
+    <br>
+    <ol class="list-decimal flex flex-col gap-4 mx-auto p-7 text-xl w-fit">
+        <li>Wees altijd op tijd</li>
+        <li>Behandel iedereen met respect</li>
+        <li>Luister naar wat je leider je zegt</li>
+        <li>Doe je schoenen uit op de mat</li>
+        <li>Doe je trainingpartner geen pijn</li>
+        <li>Bedek je wonden</li>
+        <li>Laat alles netje en heel achter</li>
+        <li>Neem een bidon met water mee</li>
+        <li>Eet voor dat je naar de traing komt</li>
+        <li>Scheld, pest of intimedeer elkaar niet</li>
+    </ol>
+
+{% endblock %}
