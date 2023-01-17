@@ -14,16 +14,10 @@ use Symfony\Component\Routing\Annotation\Route;
 #[IsGranted('ROLE_USER')]
 class UserController extends AbstractController
 {
-    #[Route('/acount', name: 'app_account')]
+    #[Route('/account', name: 'app_account')]
     public function account(EntityManagerInterface $entityManager): Response
     {
-        $user = $this->getUser();
-        $lessons = $entityManager->getRepository(User::class)->find($user);
-        $lessons->getLessons();
-//        dd($lessons->getLessons());
-        return $this->render('user/account.html.twig', [
-            'lessons' => $lessons,
-        ]);
+        return $this->render('user/account.html.twig');
     }
 
     #[Route('/lessons/{date}', name: 'app_lessons')]
@@ -57,11 +51,11 @@ class UserController extends AbstractController
         $user = $this->getUser();
         $lesson = $entityManager->getRepository(Lesson::class)->find($id);
 
+        $this->redirect('')->getTargetUrl()
+
         $user->removeLesson($lesson);
         $entityManager->flush();
 
-        return $this->redirectToRoute('app_lessons', [
-            'date' => date('Y-m-d'),
-        ]);
+        return $this->redirectToRoute('app_lessons', ['date' => date('Y-m-d')]);
     }
 }
