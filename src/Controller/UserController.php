@@ -46,21 +46,21 @@ class UserController extends AbstractController
         $user = $this->getUser();
         $lesson = $entityManager->getRepository(Lesson::class)->find($id);
 
-        $userLessonUser = $entityManager->getRepository(UserLesson::class)->findBy(['user' => $user]);
-        $userLessonLesson = $entityManager->getRepository(UserLesson::class)->findBy(['lesson' => $lesson]);
-
-        if (count($userLessonLesson) >= 1 && count($userLessonUser) >= 1) {
-            return $this->redirectToRoute('app_lessons', ['date' => date('Y-m-d')]);
-        } else {
-            $userLesson = new UserLesson();
-            $form = $this->createForm(LessonSigningType::class, $userLesson);
-            $form->handleRequest($request);
-            $userLesson->setLesson($lesson);
-            $userLesson->setUser($user);
-
-            $entityManager->persist($userLesson);
-            $entityManager->flush();
-        }
+//        $userLessonUser = $entityManager->getRepository(UserLesson::class)->findBy(['user' => $user]);
+//        $userLessonLesson = $entityManager->getRepository(UserLesson::class)->findBy(['lesson' => $lesson]);
+//
+//        if (count($userLessonLesson) >= 1 && count($userLessonUser) >= 1) {
+//            return $this->redirectToRoute('app_lessons', ['date' => date('Y-m-d')]);
+//        } else {
+//            $userLesson = new ();
+//            $form = $this->createForm(LessonSigningType::class, $userLesson);
+//            $form->handleRequest($request);
+//            $userLesson->setLesson($lesson);
+//            $userLesson->setUser($user);
+//
+//            $entityManager->persist($userLesson);
+//            $entityManager->flush();
+//        }
         return $this->redirectToRoute('app_lessons', ['date' => date('Y-m-d')]);
     }
 
@@ -70,19 +70,21 @@ class UserController extends AbstractController
         $user = $this->getUser();
         $lesson = $entityManager->getRepository(Lesson::class)->find($id);
 
-        $userLessonUser = $entityManager->getRepository(UserLesson::class)->findBy(['user' => $user]);
-        $userLessonLesson = $entityManager->getRepository(UserLesson::class)->findBy(['lesson' => $lesson]);
+//        $userLessonUser = $entityManager->getRepository(UserLesson::class)->findBy(['user' => $user]);
+//        $userLessonLesson = $entityManager->getRepository(UserLesson::class)->findBy(['lesson' => $lesson]);
 
-        $userLesson = $entityManager->getRepository(UserLesson::class)->findOneBy(['lesson' => $id]);
-        if ($userLessonLesson == [] || $userLessonUser == []) {
-            return $this->redirectToRoute('app_lessons', ['date' => date('Y-m-d')]);
-        } else {
-            $form = $this->createForm(DeleteUserLessonType::class, $userLesson);
-            $form->handleRequest($request);
-            $entityManager->remove($userLesson);
-            $entityManager->flush();
-        }
+//        $userLesson = $entityManager->getRepository(UserLesson::class)->findOneBy(['lesson' => $id]);
+//        if ($userLessonLesson == [] || $userLessonUser == []) {
+//            return $this->redirectToRoute('app_lessons', ['date' => date('Y-m-d')]);
+//        } else {
+//            $form = $this->createForm(DeleteUserLessonType::class, $userLesson);
+//            $form->handleRequest($request);
+//            $entityManager->remove($userLesson);
+//            $entityManager->flush();
+//        }
 
-        return $this->redirectToRoute('app_lessons', ['date' => date('Y-m-d')]);
+        return $this->redirectToRoute('app_lessons', [
+            'date' => date('Y-m-d'),
+        ]);
     }
 }

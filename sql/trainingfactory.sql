@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2023 at 09:33 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Gegenereerd op: 17 jan 2023 om 10:28
+-- Serverversie: 10.4.24-MariaDB
+-- PHP-versie: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,17 +24,17 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `doctrine_migration_versions`
+-- Tabelstructuur voor tabel `doctrine_migration_versions`
 --
 
 CREATE TABLE `doctrine_migration_versions` (
-  `version` varchar(191) NOT NULL,
+  `version` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
   `executed_at` datetime DEFAULT NULL,
   `execution_time` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `doctrine_migration_versions`
+-- Gegevens worden geëxporteerd voor tabel `doctrine_migration_versions`
 --
 
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
@@ -47,12 +47,13 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20230111111118', '2023-01-11 12:11:24', 51),
 ('DoctrineMigrations\\Version20230111112003', '2023-01-11 12:20:06', 85),
 ('DoctrineMigrations\\Version20230111112114', '2023-01-11 12:21:16', 55),
-('DoctrineMigrations\\Version20230112084518', '2023-01-12 09:45:27', 126);
+('DoctrineMigrations\\Version20230112084518', '2023-01-12 09:45:27', 126),
+('DoctrineMigrations\\Version20230117091709', '2023-01-17 10:17:12', 425);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lesson`
+-- Tabelstructuur voor tabel `lesson`
 --
 
 CREATE TABLE `lesson` (
@@ -63,32 +64,34 @@ CREATE TABLE `lesson` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `lesson`
+-- Gegevens worden geëxporteerd voor tabel `lesson`
 --
 
 INSERT INTO `lesson` (`id`, `time`, `sport_id`, `date`) VALUES
 (1, '14:00:00', 1, '2023-01-12'),
 (2, '16:00:00', 1, '2023-01-12'),
-(4, '20:00:00', 1, '2023-01-13');
+(4, '20:00:00', 1, '2023-01-13'),
+(5, '19:00:00', 1, '2023-01-17'),
+(6, '18:00:00', 3, '2023-01-18');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messenger_messages`
+-- Tabelstructuur voor tabel `messenger_messages`
 --
 
 CREATE TABLE `messenger_messages` (
   `id` bigint(20) NOT NULL,
-  `body` longtext NOT NULL,
-  `headers` longtext NOT NULL,
-  `queue_name` varchar(190) NOT NULL,
+  `body` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `headers` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue_name` varchar(190) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` datetime NOT NULL,
   `available_at` datetime NOT NULL,
   `delivered_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `messenger_messages`
+-- Gegevens worden geëxporteerd voor tabel `messenger_messages`
 --
 
 INSERT INTO `messenger_messages` (`id`, `body`, `headers`, `queue_name`, `created_at`, `available_at`, `delivered_at`) VALUES
@@ -97,17 +100,17 @@ INSERT INTO `messenger_messages` (`id`, `body`, `headers`, `queue_name`, `create
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sport`
+-- Tabelstructuur voor tabel `sport`
 --
 
 CREATE TABLE `sport` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `sport`
+-- Gegevens worden geëxporteerd voor tabel `sport`
 --
 
 INSERT INTO `sport` (`id`, `name`, `image`) VALUES
@@ -119,28 +122,28 @@ INSERT INTO `sport` (`id`, `name`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Tabelstructuur voor tabel `user`
 --
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `email` varchar(180) NOT NULL,
-  `roles` longtext NOT NULL COMMENT '(DC2Type:json)',
-  `password` varchar(255) NOT NULL,
-  `firstname` varchar(255) NOT NULL,
-  `insertion` varchar(255) DEFAULT NULL,
-  `lastname` varchar(255) NOT NULL,
+  `email` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `roles` longtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '(DC2Type:json)',
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `firstname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `insertion` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lastname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `birthdate` date NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gender` tinyint(1) NOT NULL,
-  `street` varchar(255) NOT NULL,
+  `street` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `streetnumber` int(11) NOT NULL,
-  `postal_code` varchar(6) NOT NULL,
-  `city` varchar(255) NOT NULL
+  `postal_code` varchar(6) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `user`
+-- Gegevens worden geëxporteerd voor tabel `user`
 --
 
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `firstname`, `insertion`, `lastname`, `birthdate`, `username`, `gender`, `street`, `streetnumber`, `postal_code`, `city`) VALUES
@@ -152,44 +155,40 @@ INSERT INTO `user` (`id`, `email`, `roles`, `password`, `firstname`, `insertion`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_lesson`
+-- Tabelstructuur voor tabel `user_lesson`
 --
 
 CREATE TABLE `user_lesson` (
-  `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `lesson_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `user_lesson`
+-- Gegevens worden geëxporteerd voor tabel `user_lesson`
 --
 
-INSERT INTO `user_lesson` (`id`, `user_id`, `lesson_id`) VALUES
-(1, 2, 1),
-(3, 2, 2),
-(4, 2, 4),
-(5, 4, 2);
+INSERT INTO `user_lesson` (`user_id`, `lesson_id`) VALUES
+(2, 5);
 
 --
--- Indexes for dumped tables
+-- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexes for table `doctrine_migration_versions`
+-- Indexen voor tabel `doctrine_migration_versions`
 --
 ALTER TABLE `doctrine_migration_versions`
   ADD PRIMARY KEY (`version`);
 
 --
--- Indexes for table `lesson`
+-- Indexen voor tabel `lesson`
 --
 ALTER TABLE `lesson`
   ADD PRIMARY KEY (`id`),
   ADD KEY `IDX_F87474F3AC78BCF8` (`sport_id`);
 
 --
--- Indexes for table `messenger_messages`
+-- Indexen voor tabel `messenger_messages`
 --
 ALTER TABLE `messenger_messages`
   ADD PRIMARY KEY (`id`),
@@ -198,76 +197,70 @@ ALTER TABLE `messenger_messages`
   ADD KEY `IDX_75EA56E016BA31DB` (`delivered_at`);
 
 --
--- Indexes for table `sport`
+-- Indexen voor tabel `sport`
 --
 ALTER TABLE `sport`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indexen voor tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`);
 
 --
--- Indexes for table `user_lesson`
+-- Indexen voor tabel `user_lesson`
 --
 ALTER TABLE `user_lesson`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`user_id`,`lesson_id`),
   ADD KEY `IDX_9D266FCEA76ED395` (`user_id`),
   ADD KEY `IDX_9D266FCECDF80196` (`lesson_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
 --
--- AUTO_INCREMENT for table `lesson`
+-- AUTO_INCREMENT voor een tabel `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `messenger_messages`
+-- AUTO_INCREMENT voor een tabel `messenger_messages`
 --
 ALTER TABLE `messenger_messages`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `sport`
+-- AUTO_INCREMENT voor een tabel `sport`
 --
 ALTER TABLE `sport`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `user_lesson`
---
-ALTER TABLE `user_lesson`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- Constraints for dumped tables
+-- Beperkingen voor geëxporteerde tabellen
 --
 
 --
--- Constraints for table `lesson`
+-- Beperkingen voor tabel `lesson`
 --
 ALTER TABLE `lesson`
   ADD CONSTRAINT `FK_F87474F3AC78BCF8` FOREIGN KEY (`sport_id`) REFERENCES `sport` (`id`);
 
 --
--- Constraints for table `user_lesson`
+-- Beperkingen voor tabel `user_lesson`
 --
 ALTER TABLE `user_lesson`
-  ADD CONSTRAINT `FK_9D266FCEA76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `FK_9D266FCECDF80196` FOREIGN KEY (`lesson_id`) REFERENCES `lesson` (`id`);
+  ADD CONSTRAINT `FK_9D266FCEA76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_9D266FCECDF80196` FOREIGN KEY (`lesson_id`) REFERENCES `lesson` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

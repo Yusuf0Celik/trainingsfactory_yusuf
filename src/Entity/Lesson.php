@@ -26,9 +26,13 @@ class Lesson
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $time = null;
 
+    #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'lessons')]
+    private Collection $users;
+
     public function __construct()
     {
         $this->user = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -68,6 +72,33 @@ class Lesson
     public function setTime(\DateTimeInterface $time): self
     {
         $this->time = $time;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users->add($user);
+            $user->addLesson($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->removeElement($user)) {
+            $user->removeLesson($this);
+        }
 
         return $this;
     }

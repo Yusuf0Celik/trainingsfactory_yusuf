@@ -34,13 +34,18 @@
                                  class="h-[15rem] w-auto object-cover">
                             <p class="text-xl">{{ lesson.date|date('d-m-Y') }}</p>
                             <p class="text-xl">{{ lesson.time|date('H:i') }}</p>
-                            <a href="{{ path('app_lesson_signing', {id: lesson.id}) }}"
-                               class="px-3 py-2 mt-4 hover:bg-transparent hover:text-green-600 border-2 border-green-600 font-semibold rounded bg-green-600 text-white transition-all">Schijf
-                                je in!</a>
-                            <a href="{{ path('app_lesson_signing_out', {id: lesson.id}) }}"
-                               class="px-3 py-2 mt-4 hover:bg-transparent hover:text-red-600 border-2 border-red-600 font-semibold rounded bg-red-600 text-white transition-all">Schijf
-                                je uit</a>
+                            {{ dump(lesson in app.user.lessons) }}
+                            {% if lesson in app.user.lessons|keys %}
+                            {% else %}
+                            {% endif %}
+                        <a href="{{ path('app_lesson_signing_out', {id: lesson.id}) }}"
+                           class="px-3 py-2 mt-4 hover:bg-transparent hover:text-red-600 border-2 border-red-600 font-semibold rounded bg-red-600 text-white transition-all">Schijf
+                            je uit</a>
+                        <a href="{{ path('app_lesson_signing', {id: lesson.id}) }}"
+                           class="px-3 py-2 mt-4 hover:bg-transparent hover:text-green-600 border-2 border-green-600 font-semibold rounded bg-green-600 text-white transition-all">Schijf
+                            je in!</a>
                         </div>
+                        {#                            {{ dump(app.user.userLessons[0].lesson) }} #}
                     {% endfor %}
                 {% endif %}
             </div>
