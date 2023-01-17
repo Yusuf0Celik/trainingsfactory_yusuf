@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 17 jan 2023 om 10:28
+-- Gegenereerd op: 17 jan 2023 om 13:00
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.6
 
@@ -71,8 +71,9 @@ INSERT INTO `lesson` (`id`, `time`, `sport_id`, `date`) VALUES
 (1, '14:00:00', 1, '2023-01-12'),
 (2, '16:00:00', 1, '2023-01-12'),
 (4, '20:00:00', 1, '2023-01-13'),
-(5, '19:00:00', 1, '2023-01-17'),
-(6, '18:00:00', 3, '2023-01-18');
+(6, '18:00:00', 3, '2023-01-18'),
+(7, '18:00:00', 1, '2023-01-17'),
+(8, '20:00:00', 1, '2023-01-17');
 
 -- --------------------------------------------------------
 
@@ -168,7 +169,7 @@ CREATE TABLE `user_lesson` (
 --
 
 INSERT INTO `user_lesson` (`user_id`, `lesson_id`) VALUES
-(2, 5);
+(4, 7);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -225,7 +226,7 @@ ALTER TABLE `user_lesson`
 -- AUTO_INCREMENT voor een tabel `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT voor een tabel `messenger_messages`
