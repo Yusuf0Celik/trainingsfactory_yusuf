@@ -51,8 +51,6 @@ class UserController extends AbstractController
         $user = $this->getUser();
         $lesson = $entityManager->getRepository(Lesson::class)->find($id);
 
-        $this->redirect('')->getTargetUrl()
-
         $user->removeLesson($lesson);
         $entityManager->flush();
 
