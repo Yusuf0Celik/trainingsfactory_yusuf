@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D40C67AE-5CA1-3589-139A-E1B3F46F93DB" containerWithKeyObject="5172A446-65A0-1120-F4DD-24B0E379D188" localFKIndex="8677F439-1A8C-7E5B-6AEE-213591CA2D16" name="User_lesson_User_FK">
-<createdBy>SD Student</createdBy>
-<createdTime>2023-01-09 09:21:32 UTC</createdTime>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F91A3A04-EC39-6661-037E-77D4CD3532C6" containerWithKeyObject="5172A446-65A0-1120-F4DD-24B0E379D188" localFKIndex="030C18A3-0BC5-B76F-1663-063CE269817B" name="User_lesson_User_FK">
+<createdBy>yc569</createdBy>
+<createdTime>2023-01-17 20:09:51 UTC</createdTime>
 <generatorID>79200200-F0FB-6D2A-794A-2D8CAEB30F48</generatorID>
 <ownerDesignName>erd</ownerDesignName>
 <referredTableLongName>User</referredTableLongName>

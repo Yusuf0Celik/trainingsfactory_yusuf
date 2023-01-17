@@ -8,6 +8,19 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="User_ID" id="3E0FDA0B-A581-520A-927E-3A34530A2D41">
+<createdBy>SD Student</createdBy>
+<createdTime>2023-01-09 09:21:32 UTC</createdTime>
+<ownerDesignName>erd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
 <Column name="id" id="4D9EA2F3-0CBD-57FE-95C6-DF310BE41835">
 <createdBy>SD Student</createdBy>
 <createdTime>2023-01-09 09:21:31 UTC</createdTime>
@@ -172,19 +185,6 @@
 <ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="User_ID" id="3E0FDA0B-A581-520A-927E-3A34530A2D41">
-<createdBy>SD Student</createdBy>
-<createdTime>2023-01-09 09:21:32 UTC</createdTime>
-<ownerDesignName>erd</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementColumn>true</autoIncrementColumn>
-<identityColumn>true</identityColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<isSurrogateColumn>true</isSurrogateColumn>
-</Column>
 <Column name="User_lesson_User_lesson_ID" id="CDEA2B03-0607-C8E7-51FC-7100D972815F">
 <createdBy>SD Student</createdBy>
 <createdTime>2023-01-09 09:21:32 UTC</createdTime>
@@ -195,9 +195,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="717E69AA-4CB0-C4A4-C978-56A20F0E8174" referredColumn="E6E42ACD-6A40-8B3B-24C9-A147B3383641"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -229,17 +226,6 @@
 <indexState>Unique Plain Index</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <relationGeneratorID>79200200-F0FB-6D2A-794A-2D8CAEB30F48</relationGeneratorID>
-<indexColumnUsage>
-<colUsage columnID="CDEA2B03-0607-C8E7-51FC-7100D972815F"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="5B8448A4-CBBD-1776-8153-CDAEC7C7E99A" name="User_User_lesson_FK">
-<createdBy>SD Student</createdBy>
-<createdTime>2023-01-09 09:21:32 UTC</createdTime>
-<generatorID>79200200-F0FB-6D2A-794A-2D8CAEB30F48</generatorID>
-<ownerDesignName>erd</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="CDEA2B03-0607-C8E7-51FC-7100D972815F"/>
 </indexColumnUsage>

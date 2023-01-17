@@ -2,25 +2,16 @@
 {% block title %}{{ parent() }} | About{% endblock %}
 
 {% block content %}
-    <div class="pt-[88px] p-5 px-10 h-[95vh] flex flex-col xl:flex-row justify-center align-middle w-full">
-        <div class="mx-auto mt-10 lg:mt-14">
-            <div class="mapouter">
-                <div class="gmap_canvas">
-                    <iframe id="gmap_canvas"
-                            src="https://maps.google.com/maps?q=De%20Werf%2011,%202544%20EH%20Den%20Haag&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-                    <style>.gmap_canvas {
-                            overflow: hidden;
-                            background: none !important;
-                            height: auto;
-                            max-width: 800px;
-                        }</style>
-                </div>
-            </div>
+    <div class="pt-[88px] p-5 px-10 h-[95vh] flex flex-col xl:flex-row justify-center align-middle w-full row">
+        <div class="mt-10 lg:mt-14 col-6 mx-auto">
+            <iframe id="gmap_canvas" class="h-[500px] max-w-[750px] w-[100%] sm:w-[600px]"
+                    src="https://maps.google.com/maps?q=De%20Werf%2011,%202544%20EH%20Den%20Haag&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
         </div>
-        <div class="max-w-[33rem] mx-auto mt-36 lg:mt-32">
+        <div class="max-w-[33rem] mx-auto mt-36 lg:mt-32 col-6">
             <h1 class="text-4xl font-semibold">Contact</h1><br>
             <p class="text-[1.25rem]">
-                Adres: De Werf 11, 2544 EH Den Haag
+                Adres: De Werf 11, 2544 EH Den Haag <br>
+                Telefoonnummer: +31 612345678
             </p>
         </div>
     </div>
